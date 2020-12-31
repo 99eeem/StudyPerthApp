@@ -1,0 +1,15 @@
+<div class="man-function">
+<%=link_to("編集", edit_post_path)%>
+ <%= link_to '削除', post_path, method: :delete %>
+ <%= link_to "profile", "/users/#{post.user_id}/show"%>
+<%if current_user.liked_by?(post.id)%>
+ <%= link_to(destroy_like_path(post.id), method: :delete, remote: true) do %>
+       <i class="fa-lg fas fa-heart icon-btn liked"></i><p>delete</p>
+   <% end %>
+   <%else%>
+    <%= link_to(create_like_path(post.id), method: :post, remote: true) do %>
+       <i class="fa-lg fas fa-heart icon-btn not-like"></i>
+   <% end %>
+<% end %>
+
+</div>

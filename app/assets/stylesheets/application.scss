@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+ .show{
+  display: block !important;
+}
+ body{
+   margin: 0;
+   .flash {
+     text-align: center;
+     margin: 0;
+     transition: all 1s ease;
+     padding: 0;
+     height: 40px;
+     border: 0;
+     line-height: 40px;
+    
+    .flash-text{
+      transition: all 1s ease;
+    }
+   }
+
+ .heading {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  position: absolute;
+ 
+  align-items: center;
+  background-color: transparent;
+  .logo-space {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .header-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+    }
+  }
+  .info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-right: 50px;
+    .contact-button{
+      background-color:  rgb(214, 153, 38);
+      border-radius: 50%;
+
+    }
+    &>li {
+      width: 150px;
+      text-align: center;
+      list-style-type: none;
+      margin: 0 7px;
+      position: relative;
+
+    
+      &> ul {
+        box-shadow: 0 5px 5px  #333333;
+        background-color: white;
+        border: 1px solid black;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        border-radius: 7px;
+       
+        display: none;
+        position: absolute;
+        &> li {
+
+          list-style-type: none;
+          width: 100%;
+        
+
+        }
+      
+       
+      }
+     
+    &:hover {
+      text-decoration: underline;
+
+    }
+  
+  
+
+      a{
+          color: white;
+          font-size: 15px;
+          font-weight: 900;
+          line-height: 60px;
+          display: block;
+
+        text-decoration: none;
+      }
+    
+    }
+    
+  }
+
+
+}
+ }

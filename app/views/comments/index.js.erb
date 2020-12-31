@@ -1,0 +1,2 @@
+document.getElementById("comments_area").innerHTML="<%= j(render partial: 'comments/index', locals: { comments: @comment.post.comments }) %>"
+$('.comment-form').val('')

@@ -1,0 +1,76 @@
+<section>
+  <div class=container>
+    <div class="post-and-post">
+      <div class="post-box">
+          <div class="place-info">
+        <% if @post.images.attached?%>
+           <div class="left-image-area">
+            <div class="post-title">
+          <%=@post.title%>
+        </div>
+          <div class="seen-image">
+            <%= image_tag @post.images.first, class: "main-image"%>
+          </div>
+        </div>
+        <div class="preview-images">
+          <% @post.images.each do |image|%>
+          <div class="post-image">
+            <%= image_tag(image,class: "preview-image")%>
+          </div>
+           <%end%> 
+          </div>
+          </div>
+        <%end%>
+        <div class="post-text">
+          <%= @post.text%>
+        </div>
+          <div class="post-detail">
+            <div class="post-time">
+              <%=@post.created_at.to_s(:datetime)%>
+            </div>
+            <div id="post_<%=@post.id%>">
+              <%=render partial: "posts/post_like", locals:{post:@post}%>
+            </div>
+          </div>
+      </div>
+      <div class="comment-box">
+      <% if user_signed_in?%>
+        <div class="comment-form">
+         <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %> 
+           </div>
+        <%end%>
+        </div>   
+         <div id="comments_area">
+            <%= render partial: 'comments/index', locals: { comments: @comments } %>
+        </div> 
+
+          
+      </diV>
+    <div class="recommened-article">
+           <div class="map-area">
+             <div id="map"></div>
+          </div>
+          <div id="latitude">
+          <%=@post.latitude%></div>
+          <div id="longitude">
+          <%=@post.longitude%></div>
+          <div id="address"><%=@post.address%></div>
+          <div id="recommended-places">
+            <h3>近くのおすすめ<br>スポット</h3>
+            <ul id="recommended-list"></ul>
+          </div>
+  
+  
+
+
+    </div>
+  </div>
+</section>
+
+<%= javascript_include_tag "posts/show" %>
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+
+
+<div class="signup-box">
+<div class="login-header">
+  <h3>ログイン</h3>
+  <%=link_to "✖", posts_path, class: "back-to-page"%>
+</div>
+ <div class="main-form">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  
+  <div　class="form-group">
+    <%= f.label :email, "Eメール"%>
+      <%= f.email_field :email, class: "form-control",  autofocus: true, autocomplete: "email" %><br>
+      <div>
+       <div　class="form-group">
+    <%= f.label :password, "パスワード"%>
+      <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+      <%=  f.password_field :password, class: "form-control",  autocomplete: "current-password"  %><br>
+  
+
+  <div class="actions">
+  <%= f.submit "Log in", class: 'btn btn-primary btn-lg btn-block' %>
+ 
+    <% end %>
+    <ul class="sns-list">
+   
+    <li><p class="or">または</p></li>
+   <li> <%= link_to user_twitter_omniauth_authorize_path do %>
+    <div class="sns-path">
+  <i class="fab fa-twitter-square fa-2x"></i>
+  <p>Twitterでログイン</p>
+  </div>
+<% end %>
+</li>
+
+  <li><%= link_to user_google_oauth2_omniauth_authorize_path do %>
+    <div class="sns-path">
+  <i class="fab fa-google"></i>
+  <p>Googleでログイン</p>
+  </div>
+  
+<% end %>
+</li>
+ </ul>
+  </div>
+  <div class="move-to-signup">
+   <%=link_to"ご登録がまだの方はこちら", new_user_registration_path%>
+  </div>
+
+
+   
+ </div>

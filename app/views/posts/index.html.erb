@@ -1,0 +1,77 @@
+<div class="main-page">
+ <section>
+  <div class="main-header">
+      
+      <h1>WE CONNECT JAPAN <br>WITH WESTAN AUSTRALIA  <br> <span>オーストラリアの生活をもっと身近に</span>
+      </h1>
+      <div class="go-button">
+        <%=link_to("生活を見る", posts_path)%>
+        <span><i class="fas fa-arrow-right"></i></span>
+    </div>
+  </section>
+  <section>
+        <div class="title">
+            <h2>コネクトパースって何<br><span>留学生の生活を見る事が出来ます。</span></h2>
+        </div>
+    <div class="top">
+      <div class="sub-title">
+      <h4>パース留学に興味がある人のプラットフォーム</h4>
+      </div>
+      <ul class="side-show">
+      　<li>
+          <div class="intro-point"><p>気になる記事を見つけよう！！</p></div>
+          <div class="intro-main">
+            <img src="/introPost.png" alt="" class="intro-image">
+            <p class="intro-explaination">留学生が一体どんな生活をしているんだろう？experience perthの留学生の生の生活をチェックしよう。</p>
+          </div>
+        </li>
+        <li>
+          <div class="intro-point"><p>気軽に質問しよう！！</p></div>
+          <div class="intro-main">
+            <img src="/introSearch.png" alt="" class="intro-image">
+            <p class="intro-explaination">悩んでいても仕方ない！！留学の先輩に質問する事で不安な気持ちを解消しよう。</p>
+          </div>
+        </li>
+        <li>
+          <div class="intro-point"><p>新しい発見！！</p></div>
+          <div class="intro-main">
+            <img src="/introFriends.png" alt="" class="intro-image">
+            <p class="intro-explnation">投稿周辺のおすすめすスポットを見て、新しい発見をしよう。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section>
+  
+    <div class="middle">
+       <img src="/SP_1708_G80.jpg" alt="" class="back-image">
+       <img src="/perth.jpg" alt="" class="back-image">
+        <div class="kinds-name">
+          <h2>何に興味がありますか？</h2>
+        </div>
+         <ul class="images">
+            <li><img src="/sss.jpg" alt="" class="type-image"><p>スポーツ</p></li>
+            <li><img src="/sss.jpg" alt="" class="type-image"><p>教育</p></li>
+            <li><img src="/sss.jpg" alt="" class="type-image"><p>観光</p></li>
+            <li><img src="/sss.jpg" alt="" class="type-image"><p>ビジネス</p></li>
+          </ul>
+       </div>
+  </section>
+  <section>
+    <div class="bottom">
+      <div id="latest-article">
+       <%=render partial: "latest_posts_row", locals:{post:@post}%>
+     </div>
+     <div id="liked-article">
+     <%=render partial: "likes_posts_row", locals:{night:@post2}%>
+       </div>
+         <div id="night-article">
+     <%=render partial: "night_posts_row", locals:{post:@post3}%>
+       </div>
+   
+   
+       </div>
+    </section>
+ </div>
+<%= javascript_include_tag "posts/index" %>

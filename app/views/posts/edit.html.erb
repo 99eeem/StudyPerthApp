@@ -1,0 +1,43 @@
+<div class="container">
+<%= render'errors_format', locals:{post:@post}%>
+    <%= form_with model: @post, local: true  do |form| %>
+    <div class="form-group">
+    <%= form.label :post_type, "ジャンル" %>
+    <%= form.select :post_type, options_for_select({食生活: 1, ナイトライフ: 2, スポーツ: 3}), {selected:@post.post_type}, {class: "form-control"} %>
+    </div>
+        <div　class="form-group">
+    <%= form.label :title, "タイトル"%>
+      <%= form.text_field :title, class: "form-control" %><br>
+      <div>
+    <div　class="form-group">
+    <%= form.label :text, "コメント"%>
+      <%= form.text_area :text, class: "form-control", :size=>"60x10", value: @post.text%> 
+   <br>
+    <div class="form-group">
+    <%= form.label :images, "写真"%>
+    <div class="preview-line">
+    <div class="submit-pair">
+    <%= form.file_field :images, id: :user_img, multiple: true, class: "form-control-file"%>
+      <%= form.submit('投稿',class: 'btn btn-primary btn-lg my-1 mb-5 px-5 koko')%>
+    </div>
+       <div class="preview-place">
+        <% if @post.images.present? %>
+             <% @post.images.each do |image|%>
+          <div class="post-image">
+            <%= image_tag(image,class: "preview", id: :img_prev)%>
+          </div>
+           <%end%> 
+         <% else %>
+            <div class="preview not-preview" id="img_prev"><p>Preview</p></div>
+          <% end %>  
+     </div>
+</div>
+
+  
+   
+    </div>
+    <% end %>
+    
+</div>
+
+<%= javascript_include_tag "edit" %>

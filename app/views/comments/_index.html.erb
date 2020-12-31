@@ -1,0 +1,19 @@
+<div class="comment-show">
+          <ul class="comment-list">
+          <%comments.first(10).each do |comment|%>
+            <li class="each-comment">
+              <div class="user-image">
+               <%=image_tag comment.user.image, :size=>"40x40"%>
+              </div>
+              <div class="comment-info">
+                <div class="detail">
+                  <div class="comment-email"><%= comment.user.user_name%></div>
+                   <div class="comment-time"><%= comment.created_at.to_s(:datetime)%></div>
+                </div>
+                <div class="comment-text">
+                  <%=comment.content%>
+                </div>
+               </li> 
+      <%end%>
+          </ul>
+      </div>

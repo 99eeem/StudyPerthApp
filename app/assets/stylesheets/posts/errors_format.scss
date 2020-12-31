@@ -1,0 +1,63 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  .eroor-message-place{
+    width: 100%;
+    border: 2px solid red;
+    border-radius: 3px;
+    ul {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      margin: 15px 0;
+    li {
+      list-style-type: none;
+      font-size: 20px;
+      color: red;
+      font-weight: bold;
+
+    }
+  }
+
+  }
+  .preview-line {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    .submit-pair {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .koko {
+        margin:0!important;
+      }
+    }
+
+  
+  .preview-place{
+    width: 50%;
+    height: 150px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .not-preview {
+      width: 100%;
+      height: 100%;
+      background-color: gray;
+      border: 2px #333333 solid;
+      border-radius: 3px;
+      p {
+        @include center;
+        font-family: bold;
+        font-size: 18px;
+
+      }
+    }
+  }
+}
+}

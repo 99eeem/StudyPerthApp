@@ -1,0 +1,231 @@
+section {
+background-color:  rgb(255, 241, 220);
+width: 100%;
+padding: 30px 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    .post-and-post{
+      width: 65%;
+    .post-box{
+    width: 100%;
+    padding: 15px;
+    
+    background-color: white;
+    .place-info{
+      margin-top: 20px;
+      display: flex;
+      height: 340px;
+      justify-content: space-between;
+      .left-image-area {
+        width: 73%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    .post-title {
+      color: orange;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .seen-image{
+      width: 100%;
+      height: 75%;
+      .main-image{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    }
+    .preview-images{
+      width: 20%;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      .post-image{
+        height: 24%;
+        width: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+    }
+  }
+    .post-text {
+      width: 100%;
+      border: rgb(189, 189, 189) 1px solid;
+     border-radius: 6px;
+     margin-top: 20px;
+     padding: 15px;
+    }
+    .post-detail{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+     }
+  }
+  
+  
+  .comment-box {
+    width: 100%;
+    background-color: white;
+    margin-top: 30px;
+    padding: 15px;
+    .comment-form {
+      width: 100%;
+        .comment-area{
+          width: 100%;
+            .comment-form{
+              width: 100%;
+              height: 70px;
+              margin-bottom: 19px;
+            }
+        }
+      }  
+  }
+  .comment-show {
+ width: 100%;
+    .comment-list {
+      padding: 0;
+     width: 100%;
+     .each-comment{
+       padding: 5px;
+       background-color: white;
+       margin: 15px 0;
+       list-style-type: none;
+       display: flex;
+       flex-direction: row;
+       .user-image {
+         display: flex;
+         align-items: center;
+         margin-right: 20px;
+         img {
+           border-radius: 25px;
+         }
+       }
+       .comment-info {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         .detail {
+           display: flex;
+           justify-content: space-between;
+           height: 30%;
+           font-size: 10px;
+           margin-bottom: 10px;
+         }
+       }
+       .comment-text {
+         height: 70%;
+         font-size: 13px;
+       }
+     }
+  }
+  }
+  
+    }
+    .recommened-article {
+      width: 30%;
+      background-color: white;
+      padding: 15px;
+
+    .map-area {
+      width: 100%;
+      height: 200px;
+      #map{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    #latitude, #longitude, #address{
+      visibility: hidden;
+    }
+    #recommended-places{
+      width: 100%;
+      height: 100%;
+      h3{
+        text-align: center;
+      }
+      #recommended-list{
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li{
+            height: 200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-top: 2px solid rgb(251, 200, 106);
+            align-items: flex-start;
+            padding: 10px 0;
+            &:nth-child(3){
+              border-bottom: 2px solid rgb(251, 200, 106);
+            }
+            .name-show{
+              display: flex;
+            .place-num{
+              margin: 0;
+            }
+            h4{
+              font-size: 15px;
+
+            }
+          }
+          .url-show {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            padding: 0 22px;
+            width: 100%;
+          .star-value{
+            color: rgb(189, 189, 189);
+            margin: 0;
+          }
+          a{
+            display: block;
+          }
+        }
+            .places-slide{
+              position: relative;
+              width: 80%;
+              height: 60%;
+              margin: auto;
+
+              img{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+              }
+              .fa-angle-right{
+                left: 100%;
+              }
+              .fa-angle-left{
+                right: 100%;
+              }
+              .fas{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 100%;
+                opacity: 0.8;
+                z-index: 3;
+                &:hover{
+                  opacity: .5;
+                }
+              }
+            } 
+          }
+      }
+    }
+    }
+  }
+}

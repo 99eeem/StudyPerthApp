@@ -1,0 +1,40 @@
+<div class="edit-container">
+<%= form_with url: profile_update_path(@user.id), local: true  do |form| %>
+  <div class="form-group">
+    <%= form.label :image, "プロフィール画像"%>
+     <%= form.file_field :image, class: "form-control-file"%>
+  </div>
+  <div class="form-group">
+    <%= form.label :name, "名前"%>
+    <%= form.text_field :name, class: "form-control", value: @user.name%>
+  </div>
+  <div class="form-group">
+    <%= form.label :user_name, "ユーザーネーム"%>
+    <%= form.text_field :user_name, class: "form-control", value: @user.user_name %>
+  </div>
+  <div class="form-group">
+    <%= form.label :profile, "自己紹介"%>
+    <%= form.text_area :profile, class: "form-control", :size=>"60x10", value: @user.profile%>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%=form.label :stay_period, "滞在歴"%>
+      <%=form.datetime_select :stay_period, class: "form-control", value: @user.stay_period%>
+    </div>
+    <div class="col">
+      <%=form.label :study_period, "学習期間"%>
+      <%=form.datetime_select :study_period, class: "form-control",value: @user.study_period %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= form.label :twiiter, "Twitterアカウント"%>
+    <%= form.text_field :twiiter, class: "form-control",value: @user.twiiter %>
+  </div>
+    <div class="form-group">
+    <%= form.label :instagram, "Instagramアカウント"%>
+    <%= form.text_field :instagram, class: "form-control", value: @user.instagram %>
+  </div>
+  <a href="#"></a><button type="button" class="btn btn-info">戻る</button></a>
+   <%= form.submit('完了',class: 'btn btn-secondary')%>
+<%end%>
+</div>
