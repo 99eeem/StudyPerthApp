@@ -33,18 +33,25 @@
             </div>
           </div>
       </div>
-      <div class="comment-box">
-      <% if user_signed_in?%>
-        <div class="comment-form">
-         <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %> 
-           </div>
-        <%end%>
-        </div>   
-         <div id="comments_area">
-            <%= render partial: 'comments/index', locals: { comments: @comments } %>
-        </div> 
-
-          
+      <ul class="inquire-box">
+        <li class="color">投稿にコメントする</li>
+        <li>投稿者に質問する</li>
+      </ul>
+      <ul class="inquire-container">
+          <li class="comment-filed tag">
+            <div class="comment-box">
+            <% if user_signed_in?%>
+              <div class="comment-form">
+              <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %> 
+                </div>
+              <%end%>
+              </div>   
+              <div id="comments_area">
+                <%= render partial: 'comments/index', locals: { comments: @comments } %>
+            </div> 
+          </li>
+          <li class="question-filed tag"></li>
+      </ul>
       </diV>
     <div class="recommened-article">
            <div class="map-area">

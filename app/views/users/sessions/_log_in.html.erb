@@ -1,10 +1,7 @@
-
-<div class="signup-section">
-
-  <div class="left-signup">
+<div class="left-signup">
     <div class="cover"></div>
     <div class="welcome-signup">
-      <h3>Welcome to Perth Experience</h3>
+      <h3>Welcome To Perth Experience</h3>
       <p>Your Journey Is full Of Nature and Discovery<br>Please Sign Up and Get Your Future</p>
     </div>
     <span><img src="/login_perth.jpg" alt="" class="signup-image"></span>
@@ -16,7 +13,7 @@
     </div>
 
     <div class="main-form">
-     <%= form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f| %>
+     <%= form_for(resource, as: resource_name, url: user_session_path) do |f| %>
         <%= render "users/shared/error_messages", resource: resource %>
       <div class="login-form">
         <div class="login-set">
@@ -57,12 +54,9 @@
         </li>
      </ul>
      </div>
-      <div class="move-to-login">
-          <%=link_to"ご登録済みの方はこちら",new_user_registration_path%>
+      <div class="move-to-signup">
+          <a id="move-to-signup">新規会員登録の方</a>
         </div>
       </div>
   </div>
   </div>
-</div>
-
-

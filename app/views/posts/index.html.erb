@@ -1,5 +1,6 @@
 <div class="main-page">
  <section>
+ <div class="top-cover"></div>
   <div class="main-header">
       
       <h1>WE CONNECT JAPAN <br>WITH WESTAN AUSTRALIA  <br> <span>オーストラリアの生活をもっと身近に</span>
@@ -64,7 +65,7 @@
        <%=render partial: "latest_posts_row", locals:{post:@post}%>
      </div>
      <div id="liked-article">
-     <%=render partial: "likes_posts_row", locals:{night:@post2}%>
+     <%=render partial: "likes_posts_row", locals:{post:@post2}%>
        </div>
          <div id="night-article">
      <%=render partial: "night_posts_row", locals:{post:@post3}%>

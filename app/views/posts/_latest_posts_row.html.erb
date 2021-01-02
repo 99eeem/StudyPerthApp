@@ -1,9 +1,9 @@
 <div class="update-new">
         <div class="new-head">
-          <h2>人気の投稿</h2>
+          <h2>新着投稿</h2>
           <div class="silide-buttons">
-            <button type="button" class="btn btn-secondary btn-sm" id="slide-previous-button">
-            ＜</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="slide-previous-button">＜
+            </button>
             <button type="button" class="btn btn-secondary btn-sm" id="slide-next-button">＞
             </button>
           </div>
@@ -13,8 +13,7 @@
             <div class="flex first-silde-items">
               <div class="each-item">
               <% if post.images.count > 0%>
-                <div class="protect"><%=link_to image_tag(post.images.first, :size =>'330x170'), post%>
-                </div>
+                <%=link_to image_tag(post.images.first, :size =>'330x170'), post_path(post.id)%>
                   <div class="new-update-info">
                     <div class="new-update-title"><%=post.title%>
                     </div>

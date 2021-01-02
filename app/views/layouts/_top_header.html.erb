@@ -1,0 +1,29 @@
+<div class="heading top" id="oko">
+    <div class="headingContents">
+        <div>
+            <ul class="info">
+             <%if user_signed_in?%>
+                <li><%=link_to "新規投稿", new_post_path%></li>
+                <li><%=link_to"My ページ", profile_show_path(current_user.id), data: {"turbolinks" => false}%>
+                </li>
+                <li> <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                </li>
+                <li class="contact-button"><%=link_to "お問い合わせ", posts_path %>
+                </li>
+                <li><img src="/logo.png" alt="" class="header-logo">  
+                </li>
+                <%else%>
+                  <li><%= link_to"ログイン", new_user_registration_path, data: {"turbolinks" => false}%>
+                  </li>
+                 <li class="contact-button"><%=link_to "お問い合わせ", posts_path %>
+                 </li>
+                 <li>
+                     <div class="logo-area">
+                         <img src="/logo.png" alt="" class="header-logo">  
+                     </div>
+                </li>
+             <%end%>
+        </ul>
+      </div>
+  </div>
+</div>

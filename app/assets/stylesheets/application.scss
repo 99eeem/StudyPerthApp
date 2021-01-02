@@ -36,13 +36,21 @@
 
  .heading {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  padding: 0 50px;
   height: 80px;
   width: 100%;
+  max-width: 1140px;
   position: absolute;
- 
-  align-items: center;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: transparent;
+  &.common{
+    background-color: white;
+    position: relative;
+    justify-content: space-between;
+  }
   .logo-space {
     width: 200px;
     display: flex;
@@ -53,6 +61,7 @@
       justify-content: center;
       align-items: center;
       height: 60px;
+      color: white;
     }
   }
   .info{
@@ -61,40 +70,25 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    margin-right: 50px;
-    .contact-button{
-      background-color:  rgb(214, 153, 38);
-      border-radius: 50%;
-
-    }
+    margin-right: 30px;
+ 
     &>li {
       width: 150px;
       text-align: center;
       list-style-type: none;
       margin: 0 7px;
       position: relative;
-
-    
-      &> ul {
-        box-shadow: 0 5px 5px  #333333;
-        background-color: white;
-        border: 1px solid black;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        border-radius: 7px;
-       
-        display: none;
-        position: absolute;
-        &> li {
-
-          list-style-type: none;
-          width: 100%;
-        
-
+      .logo-area{
+        display: flex;
+        justify-content: flex-end;
+        .header-logo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 60px;
+          color: white;
+          text-align: right;
         }
-      
-       
       }
      
     &:hover {

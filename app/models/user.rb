@@ -7,7 +7,7 @@ class User < ApplicationRecord
 has_many :posts, dependent: :destroy
 has_many :likes, dependent: :destroy
 has_many :comments, dependent: :destroy
-has_one_attached :image
+has_one_attached :image, dependent: :destroy
 has_many :liked_posts, through: :likes, source: :post
 
 def liked_by?(post_id)
@@ -23,7 +23,6 @@ end
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20] # ランダムなパスワードを作成
       user.image = auth.info.image.gsub("_normal","") if user.provider == "twitter"
-      uri = URI.parse(user.image) # パースする必要がある
       user.image = auth.info.image.gsub("picture","picture?type=large") if user.provider == "google_oauth2"
     end
   end

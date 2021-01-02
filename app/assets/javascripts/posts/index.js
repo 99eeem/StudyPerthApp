@@ -41,9 +41,9 @@
         return array.reduce((acc, value, index) => index % size ? acc : [...acc, array.slice(index, index + size)], []);
       }
      
-      var first_each_three=arrayChunk(first_items, 3);
-        var second_each_three = arrayChunk(second_items, 3);
-        var third_each_three=arrayChunk(third_items, 3);
+      var first_each_three=arrayChunk(first_items, 5);
+        var second_each_three = arrayChunk(second_items, 5);
+        var third_each_three=arrayChunk(third_items, 5);
       for (let i = 0; i < second_each_three[slide_index2].length; i++) {
         second_each_three[slide_index2][i].style.display="block"
         
