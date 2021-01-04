@@ -12,6 +12,7 @@
               <div class="comment-info">
                 <div class="detail">
                   <div class="comment-email"><%= comment.user.user_name%></div>
+                  <%= link_to("reply", post_response_create_path(@post.id, comment.id), remote: true, method: :post)%>
                    <div class="comment-time"><%= comment.created_at.to_s(:datetime)%></div>
                 </div>
                 <div class="comment-text">

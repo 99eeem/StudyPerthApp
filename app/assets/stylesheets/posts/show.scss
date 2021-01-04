@@ -164,8 +164,108 @@ padding: 30px 0;
   }
   .question-filed{
   display: none;
+  width: 100%;
     &.tag{
       display: block;
+    }
+    .comment-box {
+      width: 100%;
+      background-color: white;
+      padding: 15px;
+      .comment-form {
+        width: 100%;
+          .comment-area{
+            width: 100%;
+              .comment-form{
+                width: 100%;
+                height: 70px;
+                margin-bottom: 19px;
+              }
+          }
+        }  
+    }
+    .question-column{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      .question-list{
+        width: 50%;
+        padding: 0;
+        .each-question{
+          padding: 5px;
+           background-color: white;
+           margin: 15px 0;
+           list-style-type: none;
+           display: flex;
+           flex-direction: row;
+           border-radius: 14px 14px 14px 0;
+           .user-image{
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            img{
+              border-radius: 25px;
+            }
+           }
+           .question-info{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .detail {
+              display: flex;
+              justify-content: space-between;
+              height: 30%;
+              font-size: 10px;
+              margin-bottom: 10px;
+            }
+           }
+          .question-text{
+            height: 70%;
+             font-size: 13px;
+          }
+        }
+      }
+      .answer-list{
+        width: 40%;
+        padding: 0;
+        .each-answer{
+          height: 100px;
+          padding: 5px;
+           background-color: white;
+           margin: 15px 0;
+           list-style-type: none;
+           display: flex;
+           flex-direction: row;
+           border-radius: 14px 14px 0 14px;
+           .user-image{
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            img{
+              border-radius: 25px;
+            }
+           }
+           .answer-info{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .detail {
+              display: flex;
+              justify-content: space-between;
+              height: 30%;
+              font-size: 10px;
+              margin-bottom: 10px;
+            }
+           }
+          .answer-text{
+            height: 70%;
+             font-size: 13px;
+          }
+        }
+      }
     }
 
   }

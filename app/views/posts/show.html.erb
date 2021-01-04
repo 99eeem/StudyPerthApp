@@ -41,18 +41,29 @@
           <li class="comment-filed tag">
             <div class="comment-box">
             <% if user_signed_in?%>
-              <div class="comment-form">
+              <div class="comment-form" id="comment_form">
               <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %> 
                 </div>
               <%end%>
               </div>   
               <div id="comments_area">
-                <%= render partial: 'comments/index', locals: { comments: @comments } %>
+                <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
             </div> 
           </li>
-          <li class="question-filed tag"></li>
+          <li class="question-filed">
+          <div class="comment-box">
+            <% if user_signed_in?%>
+              <div class="comment-form" id="question_form">
+              <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %> 
+                </div>
+              <%end%>
+              </div>   
+              <div id="question_area">
+              <%=render partial: "comments/answer_index", locals:{comments:@comments, post: @post}%>
+              </div>
+          </li>
       </ul>
-      </diV>
+      </div>
     <div class="recommened-article">
            <div class="map-area">
              <div id="map"></div>

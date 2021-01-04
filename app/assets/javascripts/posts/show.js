@@ -285,7 +285,7 @@ document.addEventListener("turbolinks:load", function () {
     //here is function that visitor can switch comments and questions
     //コメントと質問のタブを切り替えられる機能
     var tabs = document.querySelectorAll(".inquire-box li");
-    var contents = document.querySelectorAll(".inquire-container li");
+    var contents = document.querySelectorAll(".inquire-container >li");
     for (let i = 0; i < tabs.length; i++) {
       tabs[i].addEventListener("click", function () {
         for (let k = 0; k < tabs.length; k++) {
@@ -301,7 +301,7 @@ document.addEventListener("turbolinks:load", function () {
       
     }
 
-
+    console.log(contents);
 
   }
 });

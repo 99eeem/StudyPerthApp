@@ -1,0 +1,13 @@
+<%= form_with url: post_reply_create_path(post.id) do |form|%>
+            <div class="comment-area">
+              <%= form.label :content, "返信"%>
+              <p><%=comment.user.user_name%>さんの質問に回答する</p>
+                <%= form.text_area :content, class: "comment-form", :size=>"10x10",placeholder: "内容を記入してください"%><br>
+                <%=form.hidden_field :parent_id, value: comment.id%>
+                <%=form.hidden_field :post_id, value: post.id%>
+
+            <div class="commnet-submit">
+              <%=form.submit("Lets's submit", class: "btn btn-outline-secondary")%>
+            </div>
+          </div>
+  <%end%>

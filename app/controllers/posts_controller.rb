@@ -39,7 +39,8 @@ class PostsController < ApplicationController
   end
   def show
       @post = Post.find(params[:id])
-      @comment=Comment.new
+      @comment= @post.comments.build
+      @comment_reply = @post.comments.build
       @comments=@post.comments.order(created_at: :ASC)
     
   end
