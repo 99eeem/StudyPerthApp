@@ -1,7 +1,11 @@
-<%= form_with model:[post, question] do |form|%>
+<%= form_with url: post_reply_create_path(post.id) do |form|%>
             <div class="question-area">
-              <%= form.label :content, "コメント"%>
+              <%= form.label :content, "返信"%>
+              <p><%=question.user.user_name%>さんの質問に回答する</p>
                 <%= form.text_area :content, class: "question-form", :size=>"10x10",placeholder: "内容を記入してください"%><br>
+                <%=form.hidden_field :parent_id, value: question.id%>
+                <%=form.hidden_field :post_id, value: post.id%>
+
             <div class="question-submit">
               <%=form.submit("Lets's submit", class: "btn btn-outline-secondary")%>
             </div>

@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only:[:show]
+  layout 'posts'
+
+
   def index
     @post=Post.all.order(id: "DESC") 
       @post2 = Post.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
@@ -17,7 +20,7 @@ class PostsController < ApplicationController
 
     if @post.save
     flash[:success]="写真を投稿しました"
-    redirect_to(posts_url)
+    redirect_to root_path
     else
       render(new_post_path)
     end
@@ -32,7 +35,7 @@ class PostsController < ApplicationController
     @post.update params.require(:post).permit(:text, :title, :type, images: []) # POINT
     if @post.save
       flash[:success]="写真を編集しました"
-    redirect_to posts_path
+    redirect_to root_path
     else
       render("posts/edit")
     end
@@ -42,6 +45,9 @@ class PostsController < ApplicationController
       @comment= @post.comments.build
       @comment_reply = @post.comments.build
       @comments=@post.comments.order(created_at: :ASC)
+      @question= @post.questions.build
+      @question_reply = @post.questions.build
+      @questions=@post.questions.order(created_at: :ASC)
     
   end
   
@@ -49,7 +55,7 @@ class PostsController < ApplicationController
 
     @post=Post.find_by(id: params[:id])
     @post.destroy
-    redirect_to posts_path
+    redirect_to root_path
 
 
   end

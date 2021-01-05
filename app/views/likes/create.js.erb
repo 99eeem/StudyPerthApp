@@ -1,3 +1,4 @@
-console.log("akjhxkja");
-
-document.getElementById("post_<%=post.id%>").innerHTML="<%=j(render partial: "posts/post_like", locals:{post:@post})%>"
+var like_area = document.querySelectorAll(".post_<%=@post.id%>");
+for (let i = 0; i < like_area.length; i++) {
+  like_area[i].innerHTML="<%=j(render partial: "posts/post_like", locals:{post:@post})%>"
+}

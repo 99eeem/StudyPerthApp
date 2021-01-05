@@ -1,0 +1,27 @@
+.footer{
+  max-width: 1140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #754F44;
+  margin: 0 auto;
+  height: 200px;
+  .social-media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+      margin: 25px;
+      &:hover{
+        text-decoration: none;
+      }
+      .fab{
+       color: white;
+      }
+    }
+  }
+  h5{
+    color: white;
+  }
+}

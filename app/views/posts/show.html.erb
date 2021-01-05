@@ -25,17 +25,41 @@
           <%= @post.text%>
         </div>
           <div class="post-detail">
-            <div class="post-time">
-              <%=@post.created_at.to_s(:datetime)%>
+            <div class="left-detail">
+              <%=link_to("/users/#{@post.user_id}/show", data: {"turbolinks" => false}) do%>
+              <div class="profile-image">
+              <%if @post.user.image.attached?%>
+                <%=image_tag (@post.user.image), :size=>"40x40"%>
+              <%else%>
+                <img src="<%=@post.user.user_image%>" alt="" width="40px" height="40px">
+              <%end%>
+                <%=@post.user.user_name%>
+              </div>
+              <%end%>
+              <div class="post-time">
+                <span>投稿日:<%=@post.created_at.to_s(:datetime)%></span>
+              </div>
+               <div class="modify-post">
+                  <%=link_to("編集", edit_post_path)%>
+                  <%= link_to '削除', post_path, method: :delete %>
+              </div>
             </div>
-            <div id="post_<%=@post.id%>">
-              <%=render partial: "posts/post_like", locals:{post:@post}%>
-            </div>
+            <div class="right-detail">
+                  <div class="post_<%=@post.id%>">
+                    <%=render partial: "posts/post_like", locals:{post:@post}%>
+                  </div>
+              </div>
           </div>
       </div>
       <ul class="inquire-box">
         <li class="color">投稿にコメントする</li>
-        <li>投稿者に質問する</li>
+        <li>
+          <% if @post.user.name.present?%>
+            <p><%=@post.user.name%>さんに質問する</p>
+          <%else%>
+            <p>投稿者に質問する</p>
+          <%end%>
+        </li>
       </ul>
       <ul class="inquire-container">
           <li class="comment-filed tag">
@@ -51,15 +75,15 @@
             </div> 
           </li>
           <li class="question-filed">
-          <div class="comment-box">
+          <div class="question-box">
             <% if user_signed_in?%>
-              <div class="comment-form" id="question_form">
-              <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %> 
+              <div class="question-form" id="question_form">
+              <%= render partial: 'questions/form', locals: { question: @question, post: @post } %> 
                 </div>
               <%end%>
               </div>   
               <div id="question_area">
-              <%=render partial: "comments/answer_index", locals:{comments:@comments, post: @post}%>
+              <%=render partial: "questions/answer_index", locals:{questions:@questions, post: @post}%>
               </div>
           </li>
       </ul>

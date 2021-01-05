@@ -1,2 +1,2 @@
-document.getElementById("question_area").innerHTML="<%= j(render partial: 'questions/answer_index', locals: {questions: @question.post.comments }) %>"
-$('.comment-form').val('')
+document.getElementById("question_area").innerHTML="<%= j(render partial: 'questions/answer_index', locals: {questions: @question.post.questions }) %>"
+$('.question-form').val('')

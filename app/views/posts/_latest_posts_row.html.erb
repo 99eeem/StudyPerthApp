@@ -20,27 +20,10 @@
                     <div>
                       <div class="new-update-time"><%=post.created_at.to_s(:datetime)%>
                       </div>
-                      <%if user_signed_in?%>
-                      <% if current_user.liked_by?(post.id)%>
-                       <%= link_to(destroy_like_path(post.id), method: :delete, remote: true) do %>
-                       <i class="fas fa-thumbs-up"></i>
-                       <%end%>
-                       <%=post.likes.count%>
-                        <%else%>
-                           <%= link_to(create_like_path(post.id), method: :post, remote: true) do %>
-                        <i class="far fa-thumbs-up"></i>
-                        <%end%>
-                        <%=post.likes.count%>
-                      <%end%>
-                        <i class="far fa-comments"></i>
-                       <%=post.comments.count%>
-                      <%else%>
-                       <i class="far fa-thumbs-up"></i>
-                       <%=post.likes.count%>
-                       <i class="far fa-comments"></i>
-                       <%=post.comments.count%>
-                      <%end%>
-                    </div>
+                      <div class="post_<%=post.id%> like">
+                        <%=render partial: "posts/post_like", locals:{post:post}%>
+                      </div>
+                  </div>
                 </div>
               <%end%>
             </div>

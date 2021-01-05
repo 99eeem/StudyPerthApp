@@ -98,6 +98,9 @@
             border-radius: 50px;
             width: 45%;
             float: right;
+            background-color: #f9320c;
+            border: none;
+
           }
         }
       }
@@ -131,11 +134,12 @@
                 align-items: center;
                 justify-content: center;
                 border: none;
+
                 &.twitter{
-                  background-color: cornflowerblue;
+                  background-color: #75D701;
                 }
                 &.google{
-                  background-color: rgb(3, 187, 3);
+                  background-color: #f9c00c;
                 }
                
                 .fab{

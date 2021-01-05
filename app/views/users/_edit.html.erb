@@ -19,11 +19,11 @@
   <div class="row">
     <div class="col">
       <%=form.label :stay_period, "滞在歴"%>
-      <%=form.datetime_select :stay_period, class: "form-control", value: @user.stay_period%>
+      <%=form.date_select :stay_period, class: "form-control", value: @user.stay_period%>
     </div>
     <div class="col">
       <%=form.label :study_period, "学習期間"%>
-      <%=form.datetime_select :study_period, class: "form-control",value: @user.study_period %>
+      <%=form.date_select :study_period, class: "form-control",value: @user.study_period %>
     </div>
   </div>
   <div class="form-group">

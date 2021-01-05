@@ -1,15 +1,20 @@
-<div class="man-function">
-<%=link_to("編集", edit_post_path)%>
- <%= link_to '削除', post_path, method: :delete %>
- <%= link_to "profile", "/users/#{post.user_id}/show", data: {"turbolinks" => false}%>
-<%if current_user.liked_by?(post.id)%>
- <%= link_to(destroy_like_path(post.id), method: :delete, remote: true) do %>
-       <i class="fa-lg fas fa-heart icon-btn liked"></i><p>delete</p>
-   <% end %>
-   <%else%>
+<%if user_signed_in?%>
+<% if current_user.liked_by?(post.id)%>
+    <%= link_to(destroy_like_path(post.id), method: :delete, remote: true) do %>
+        <i class="fas fa-thumbs-up"></i>
+    <%end%>
+        <%=post.likes.count%>
+    <%else%>
     <%= link_to(create_like_path(post.id), method: :post, remote: true) do %>
-       <i class="fa-lg fas fa-heart icon-btn not-like"></i>
-   <% end %>
-<% end %>
-
-</div>
+        <i class="far fa-thumbs-up"></i>
+    <%end%>
+        <%=post.likes.count%>
+<%end%>
+<i class="far fa-comments"></i>
+<%=post.comments.count%>
+<%else%>
+<i class="fas fa-thumbs-up"></i>
+<%=post.likes.count%>
+<i class="far fa-comments"></i>
+<%=post.comments.count%>
+<%end%>

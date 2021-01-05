@@ -1,0 +1,129 @@
+
+<div class="question-column">
+    <div class="seen-question">
+        <div class="top-question">
+            <ul class="question-list">
+                <%questions.first(8).each do |question|%>
+                    <% if question.parent_id.present? || question.id.blank? %>
+                    <% next %>
+                    <% end %>
+                    <li class="each-question">
+                        <div class="user-image">
+                            <%if question.user.image.attached?%>
+                            <%=image_tag (question.user.image), :size=>"40x40"%>
+                            <%else%>
+                            <img src="<%=question.user.user_image%>" alt="" width="40px" height="40px">
+                            <%end%>
+                    </div>
+                    <div class="question-info">
+                        <div class="detail">
+                            <div class="question-email"><%= question.user.user_name%>
+                            </div>
+                            <div class="question-time"><%= question.created_at.to_s(:datetime)%>
+                            </div>
+                        </div>
+                            <div class="interaction">
+                                <div class="questiont-text">
+                                        <%=question.content%>
+                                    </div>
+                                    <div class="reply">
+                                <%=link_to(post_response_create_path(@post.id, question.id), remote: true, method: :post) do%>
+                                <p>返信<i class="fas fa-reply"></i></P>
+                                <%end%>
+                                    </div>
+                            </div>
+                        </div>
+                    </li> 
+                <%end%>
+            </ul>
+            <ul class="answer-list">
+                <%questions.each do |question|%>
+                    <% question.replies.first(3).each do |reply| %> 
+                        <li class="each-answer">
+                        <div class="user-image">
+                            <%if reply.user.image.attached?%>
+                            <%=image_tag (reply.user.image), :size=>"40x40"%>
+                            <%else%>
+                            <img src="<%=reply.user.user_image%>" alt="" width="40px" height="40px">
+                            <%end%>
+                    </div>
+                    <div class="answer-info">
+                        <div class="detail">
+                            <div class="answer-email"><p><%= question.user.user_name%>さんへの返信</p>
+                            </div>
+                        </div>
+                        <div class="answer-text">
+                        <%=reply.content%>
+                        </div>
+                        </div>
+                    </li> 
+                    <%end%>  
+                <%end%>
+            </ul>
+        </div>
+        <h6 class="more" data-toggle="collapse" data-target="#collapseanswer" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-chevron-down fa-2x"></i></h6>
+        <h6 class="less" data-toggle="collapse" data-target="#collapseanswer" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-chevron-up fa-2x"></i></h6>
+    </div>
+    <div class="collapse" id="collapseanswer">
+        <div class="top-question">
+            <ul class="question-list">
+                <%questions.offset(8).each do |question|%>
+                    <% if question.parent_id.present? || question.id.blank? %>
+                    <% next %>
+                    <% end %>
+                    <li class="each-question">
+                        <div class="user-image">
+                            <%if question.user.image.attached?%>
+                            <%=image_tag (question.user.image), :size=>"40x40"%>
+                            <%else%>
+                            <img src="<%=question.user.user_image%>" alt="" width="40px" height="40px">
+                            <%end%>
+                    </div>
+                    <div class="question-info">
+                        <div class="detail">
+                            <div class="question-email"><%= question.user.user_name%>
+                            </div>
+                            <div class="question-time"><%= question.created_at.to_s(:datetime)%>
+                            </div>
+                        </div>
+                            <div class="interaction">
+                                <div class="questiont-text">
+                                        <%=question.content%>
+                                    </div>
+                                    <div class="reply">
+                                <%=link_to(post_response_create_path(@post.id, question.id), remote: true, method: :post) do%>
+                                <p>返信<i class="fas fa-reply"></i></P>
+                                <%end%>
+                                    </div>
+                            </div>
+                        </div>
+                    </li> 
+                <%end%>
+            </ul>
+            <ul class="answer-list">
+                <%questions.each do |question|%>
+                    <% question.replies.offset(3).each do |reply| %> 
+                        <li class="each-answer">
+                        <div class="user-image">
+                            <%if reply.user.image.attached?%>
+                            <%=image_tag (reply.user.image), :size=>"40x40"%>
+                            <%else%>
+                            <img src="<%=reply.user.user_image%>" alt="" width="40px" height="40px">
+                            <%end%>
+                    </div>
+                    <div class="answer-info">
+                        <div class="detail">
+                            <div class="answer-email"><p><%= question.user.user_name%>さんへの返信</p>
+                            </div>
+                        </div>
+                        <div class="answer-text">
+                        <%=reply.content%>
+                        </div>
+                        </div>
+                    </li> 
+                    <%end%>  
+                <%end%>
+            </ul>    
+        </div>
+    </div>
+</div>

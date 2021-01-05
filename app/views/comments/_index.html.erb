@@ -1,6 +1,7 @@
 <div class="comment-show">
+    <div class="top-comment">
           <ul class="comment-list">
-          <%comments.first(10).each do |comment|%>
+          <%comments.first(5).each do |comment|%>
             <li class="each-comment">
               <div class="user-image">
               <%if comment.user.image.attached?%>
@@ -12,7 +13,6 @@
               <div class="comment-info">
                 <div class="detail">
                   <div class="comment-email"><%= comment.user.user_name%></div>
-                  <%= link_to("reply", post_response_create_path(@post.id, comment.id), remote: true, method: :post)%>
                    <div class="comment-time"><%= comment.created_at.to_s(:datetime)%></div>
                 </div>
                 <div class="comment-text">
@@ -21,4 +21,30 @@
                </li> 
       <%end%>
           </ul>
+          <h6 class="more" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-chevron-down fa-2x"></i></h6>
+          <h6 class="less" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-chevron-up fa-2x"></i></h6>
       </div>
+       <div class="collapse" id="collapseExample">
+        <ul class="comment-list">
+          <%comments.offset(5).each do |comment|%>
+            <li class="each-comment">
+              <div class="user-image">
+              <%if comment.user.image.attached?%>
+                <%=image_tag (comment.user.image), :size=>"40x40"%>
+              <%else%>
+                <img src="<%=comment.user.user_image%>" alt="" width="40px" height="40px">
+              <%end%>
+              </div>
+              <div class="comment-info">
+                <div class="detail">
+                  <div class="comment-email"><%= comment.user.user_name%></div>
+                   <div class="comment-time"><%= comment.created_at.to_s(:datetime)%></div>
+                </div>
+                <div class="comment-text">
+                  <%=comment.content%>
+                </div>
+               </li> 
+      <%end%>
+          </ul>
+       </div>
+  </div>

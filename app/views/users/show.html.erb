@@ -15,7 +15,7 @@
         <div class="personal-info">
           <h2><%=@user.name%></h2>
           <p class="userId">ユーザー名:<%=@user.user_name%></p>
-          <p class="start-date"><%=@user.created_at.to_s(:datetime)%>から利用しています</p>
+          <p class="start-date"><%=@user.created_at.to_s(:datetime)%>日から利用しています</p>
         </div>
       </div>
       <div class="profile-edit">
@@ -26,10 +26,10 @@
       <ul>
         <li><%=@user.posts.count%></li>
         <li><%=@user.likes.count%></li>
-        <li><%=@user.comments.count%></li>
+        <li><%=@replies%></li>
       </ul>
-      <div class="duration-stay"><%=@user.stay_period%>からパースに滞在中</div>
-      <div class="duration-study"><%=@user.study_period%>から英語学習中</div>
+      <div class="duration-stay"><%=@user.stay_period%>日からパースに滞在中</div>
+      <div class="duration-study"><%=@user.study_period%>日から英語学習中</div>
     </div>
     <div class="introduction-row">
       <h5 class="title">自己紹介</h5>
@@ -54,10 +54,11 @@
           <li class="each-post">
             <%=image_tag post.images.first, class: "post-image"%>
             <div class="post-details">
+              <%=link_to(post_path(post.id), data: {"turbolinks" => false}) do%>
               <h5><%=post.title%></h5>
               <p><%=post.text%></p>
+              <%end%>
               <p><%=post.created_at.to_s(:datetime)%></p>
-              
             </div>
           </li>
           <%end%>

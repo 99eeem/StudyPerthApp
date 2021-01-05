@@ -300,8 +300,25 @@ document.addEventListener("turbolinks:load", function () {
       })
       
     }
+    //The function that people can see comments more 
+    //コメント欄のロールアップとロールダウン
+    var more = document.querySelectorAll(".more");
+    var less = document.querySelectorAll(".less");
+    for (let i = 0; i < more.length; i++) {
+      more[i].addEventListener("click", function () {
+        more[i].style.display = "none";
+        less[i].style.display = "block";
+      })
+      less[i].addEventListener("click", function () {
+        more[i].style.display = "block";
+        less[i].style.display = "none";
+      })
+      
+      
+      
+    }
+    console.log(more);
 
-    console.log(contents);
 
   }
 });

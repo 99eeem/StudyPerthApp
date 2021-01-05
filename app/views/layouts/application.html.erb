@@ -14,21 +14,14 @@
 
   <body>
    <div id="mask"></div>
-    <%= render "layouts/flash_messages" %>
-    <% if current_page?(posts_path) %> 
-        <%=render "layouts/top_header"%>
-    <%elsif current_page?(root_path)%>
-        <%=render "layouts/top_header"%>
-    <% elsif current_page?(new_user_registration_path) %>
-    <% else%>
-        <%=render "layouts/common_header"%>
-  <%end%>
+   <%=render "layouts/top_header"%>
       
       
 
     <%= yield %>
     
-
-  
+<%unless current_page?(new_user_registration_path)%>
+  <%=render "layouts/footer"%>
+ <%end%> 
   </body>
 </html>

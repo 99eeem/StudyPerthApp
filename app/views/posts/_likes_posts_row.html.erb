@@ -2,9 +2,9 @@
         <div class="new-head">
           <h2>人気の投稿</h2>
           <div class="silide-buttons">
-            <button type="button" class="btn btn-secondary btn-sm" id="slide-previous-button">＜
+            <button type="button" class="btn btn-secondary btn-sm" id="slide-previous-button2">＜
             </button>
-            <button type="button" class="btn btn-secondary btn-sm" id="slide-next-button">＞
+            <button type="button" class="btn btn-secondary btn-sm slide-next-button" id="slide-next-button2">＞
             </button>
           </div>
          </div>         
@@ -20,26 +20,9 @@
                     <div>
                       <div class="new-update-time"><%=post.created_at.to_s(:datetime)%>
                       </div>
-                      <%if user_signed_in?%>
-                      <% if current_user.liked_by?(post.id)%>
-                       <%= link_to(destroy_like_path(post.id), method: :delete, remote: true) do %>
-                       <i class="fas fa-thumbs-up"></i>
-                       <%end%>
-                       <%=post.likes.count%>
-                        <%else%>
-                           <%= link_to(create_like_path(post.id), method: :post, remote: true) do %>
-                        <i class="far fa-thumbs-up"></i>
-                        <%end%>
-                        <%=post.likes.count%>
-                      <%end%>
-                        <i class="far fa-comments"></i>
-                       <%=post.comments.count%>
-                      <%else%>
-                       <i class="far fa-thumbs-up"></i>
-                       <%=post.likes.count%>
-                       <i class="far fa-comments"></i>
-                       <%=post.comments.count%>
-                      <%end%>
+                      <div class="post_<%=post.id%> like">
+                        <%=render partial: "posts/post_like", locals:{post:post}%>
+                      </div>
                     </div>
                 </div>
               <%end%>

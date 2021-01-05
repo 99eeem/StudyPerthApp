@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MySubject</title>
+    <%= csrf_meta_tags %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+       <script src="//maps.google.com/maps/api/js?key=<%= Rails.application.credentials[:GOOGLE_MAP_KEY] %>&libraries=places" async defer></script>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+   <%=render "layouts/common_header"%>
+      
+      
+
+    <%= yield %>
+    
+
+  </body>
+</html>
