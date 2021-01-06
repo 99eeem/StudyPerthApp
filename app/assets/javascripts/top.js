@@ -59,9 +59,6 @@
           first_each_three[slide_index1][i].style.display="block"
           
           }
-          for (let i = 0; i < third_each_three[slide_index3].length; i++) {
-            third_each_three[slide_index3][i].style.display="block"
-          }
   
     //making arrays that add class name for grid function
     //gridで見出しを作るための関数
@@ -73,7 +70,7 @@
         }
       }
     }
-  
+    console.log(first_items);
   main_post(first_items);
   main_post(second_items);
   main_post(third_items);
@@ -208,12 +205,9 @@
   
   
   }
-        
-  
+
     
    });
-  
-  
   
   
   

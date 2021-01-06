@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout 'users'
     def show 
       @user = User.find_by(id: params[:id])
       @post = Post.find_by(user_id: params[:id])

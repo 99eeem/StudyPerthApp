@@ -6,7 +6,7 @@
   flex-direction: column;
   background-color: #754F44;
   margin: 0 auto;
-  height: 200px;
+  height: 150px;
   .social-media{
     display: flex;
     align-items: center;
@@ -23,5 +23,6 @@
   }
   h5{
     color: white;
+    font-size: 13px;
   }
 }

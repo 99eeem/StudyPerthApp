@@ -7,12 +7,14 @@ class Users::SessionsController < Devise::SessionsController
    def new
      super
      flash.delete(:notice)
+   
    end
 
   # POST /resource/sign_in
    def create
     super
     flash.delete(:notice)
+    render new_user_registration_path
   end
 
   # DELETE /resource/sign_out

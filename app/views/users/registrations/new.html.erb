@@ -1,11 +1,11 @@
-
-
 <div class="signup-section">
   <div id="sign-up" class="show-up">
     <%=render "users/registrations/sign_up"%>
-  <div id="log-in">
-    <%=render "users/sessions/log_in"%>
+    <div id="log-in">
+      <%=render "users/sessions/log_in"%>
+    </div>
   </div>
-  
-</div>
-<%= javascript_include_tag "users/registrations/new" %>
+  <% content_for(:body_attributes) do %>
+  data-turbolinks="false"
+  <% end %>
+  <%= javascript_include_tag "users/registrations/new" %>

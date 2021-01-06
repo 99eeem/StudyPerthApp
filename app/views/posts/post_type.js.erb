@@ -1,0 +1,58 @@
+<%if @posts.blank?%>
+document.getElementById("night-article").innerHTML="<%= j(render  'posts/no_result') %>"
+<%else%>
+document.getElementById("night-article").innerHTML="<%= j(render partial: 'posts/post_type', locals: { post: @posts, post_type: @post_type
+}) %>"
+<%end%>
+ var third_items=document.querySelectorAll(".third-silde-items");
+ var slide_index3=0;
+  const arrayChunk = ([...array], size = 1) => {
+  return array.reduce((acc, value, index) => index % size ? acc : [...acc, array.slice(index, index + size)], []);
+}
+  var third_each_three = arrayChunk(third_items, 5);
+for (let i = 0; i < third_each_three[slide_index3].length; i++) {
+third_each_three[slide_index3][i].style.display="block"
+}
+  next_btn3=document.getElementById("slide-next-button3")
+        previous_btn3=document.getElementById("slide-previous-button3")
+function main_post(array) {
+for (let i = 0; i < array.length; i++) {
+if (i == 0||( i % 5)==0) {
+  array[i].classList.add("biggest-area")
+
+}
+}
+}
+main_post(third_items);
+
+ next_btn3.addEventListener("click", function(){
+      for (let i = 0; i <third_each_three[slide_index3].length; i++) {
+        third_each_three[slide_index3][i].style.display = "none"  
+      }
+      if(slide_index3 >= third_each_three.length - 1){
+        slide_index3 = 0;
+     } else {
+        slide_index3++;
+     }
+     for (let k = 0; k < third_each_three[slide_index3].length; k++) {
+       third_each_three[slide_index3][k].style.display="block"
+     }
+    }
+    )
+    previous_btn3.addEventListener("click", function(){
+      for (let i = 0; i <third_each_three[slide_index3].length; i++) {
+        third_each_three[slide_index3][i].style.display="none"
+         
+        }
+        if(slide_index3 <= 0){
+         slide_index3=third_each_three.length-1
+        } else {
+         slide_index3--;
+        }
+        for (let k = 0; k <third_each_three[slide_index3].length; k++) {
+        third_each_three[slide_index3][k].style.display="block"  
+        }
+    }
+          )
+  
+  

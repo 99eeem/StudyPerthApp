@@ -107,8 +107,10 @@
 
     </div>
   </div>
+<% content_for(:body_attributes) do %>
+    data-turbolinks="false"
+<% end %>
 </section>
-
 <%= javascript_include_tag "posts/show" %>
 
 

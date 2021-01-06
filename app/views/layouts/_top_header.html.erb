@@ -1,6 +1,5 @@
-<div class="heading top" id="oko">
+<div class="heading" id="oko">
     <div class="headingContents">
-        <div>
             <ul class="info">
              <%if user_signed_in?%>
                 <li><%=link_to "新規投稿", new_post_path%></li>
@@ -18,12 +17,11 @@
                  <li class="contact-button"><%=link_to "お問い合わせ", root_path %>
                  </li>
                  <li>
-                     <div class="logo-area">
+                    <div class="logo-area">
                          <img src="/logo.png" alt="" class="header-logo">  
-                     </div>
+                    </div>
                 </li>
              <%end%>
         </ul>
-      </div>
   </div>
 </div>

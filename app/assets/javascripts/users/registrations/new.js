@@ -14,3 +14,4 @@ document.addEventListener("turbolinks:load", function () {
     console.log(document.getElementById("move-to-signup"));
   }
 });
+

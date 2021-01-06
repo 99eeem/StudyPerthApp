@@ -13,15 +13,18 @@
   </head>
 
   <body>
-   <div id="mask"></div>
+  <% if content_for?(:body_attributes) %>
+  <%= yield(:body_attributes) %>
+   <% end %>
    <%=render "layouts/top_header"%>
       
       
 
     <%= yield %>
     
-<%unless current_page?(new_user_registration_path)%>
+
   <%=render "layouts/footer"%>
- <%end%> 
+
+ 
   </body>
 </html>

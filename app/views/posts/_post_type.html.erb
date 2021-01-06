@@ -1,18 +1,4 @@
-<div class="update-new">
-        <div class="new-head">
-          <%= form_with url: search_path  do |form| %>
-        <%= form.label :post_type, "ジャンル" %>
-    <%= form.select :post_type, options_for_select({食べ物: 1, ショッピング: 2, スポーツ: 3, 自然: 4, ナイトライフ: 5, 旅行: 6,音楽: 7, 学生生活: 8, お仕事: 9, その他:10}), { include_blank: "選択して下さい"} %>
-        <%=form.submit%>
-        <%end%>
-          <div class="silide-buttons">
-            <button type="button" class="btn btn-secondary btn-sm" id="slide-previous-button3">＜
-            </button>
-            <button type="button" class="btn btn-secondary btn-sm" id="slide-next-button3">＞
-            </button>
-          </div>
-         </div>         
-          <div class="new-update">
+<div class="new-update">
           <% post.each do |post|%>
             <div class="flex third-silde-items">
               <div class="each-item">
@@ -33,5 +19,4 @@
             </div>
            </div>
            <%end%>
-         </div>
-      </div>
+</div>

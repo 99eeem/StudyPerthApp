@@ -1,40 +1,46 @@
 <div class="main-page">
- <section>
- <div class="top-cover"></div>
-  <div class="main-header">
-      
-      <h1>WE CONNECT JAPAN <br>WITH WESTAN AUSTRALIA  <br> <span>オーストラリアの生活をもっと身近に</span>
+  <section>
+    <div class="top-cover"></div>
+    <div class="main-header">
+
+      <h1>WE CONNECT JAPAN <br>WITH WESTAN AUSTRALIA <br> <span>オーストラリアの生活をもっと身近に</span>
       </h1>
       <div class="go-button">
         <%=link_to("生活を見る", root_path)%>
         <a href="/posts#latest-article" data-turbolinks="false"><span><i class="fas fa-arrow-down"></i></span></a>
-    </div>
+      </div>
   </section>
   <section>
-        <div class="title">
-            <h2>コネクトパースって何<br><span>留学生の生活を見る事が出来ます。</span></h2>
-        </div>
+    <div class="title">
+      <h2>コネクトパースって何<br><span>留学生の生活を見る事が出来ます。</span></h2>
+    </div>
     <div class="top">
       <div class="sub-title">
-      <h4>パース留学に興味がある人のプラットフォーム</h4>
+        <h4>パース留学に興味がある人のプラットフォーム</h4>
       </div>
       <ul class="side-show">
-      　<li>
-          <div class="intro-point"><p>気になる記事を見つけよう！！</p></div>
+        　<li>
+          <div class="intro-point">
+            <p>気になる記事を見つけよう！！</p>
+          </div>
           <div class="intro-main">
             <img src="/introPost.png" alt="" class="intro-image">
             <p class="intro-explaination">Experience Parthの留学生の生活を見る事が出来ます。いいねやコメントをして留学生と仲良くなろう。</p>
           </div>
         </li>
         <li>
-          <div class="intro-point"><p>気軽に質問しよう！！</p></div>
+          <div class="intro-point">
+            <p>気軽に質問しよう！！</p>
+          </div>
           <div class="intro-main">
             <img src="/introSearch.png" alt="" class="intro-image">
             <p class="intro-explaination">現地の留学生に質問をすることが出来ます。悩んでる事を聞いて留学の準備をしよう。</p>
           </div>
         </li>
         <li>
-          <div class="intro-point"><p>新しい発見！！</p></div>
+          <div class="intro-point">
+            <p>新しい発見！！</p>
+          </div>
           <div class="intro-main">
             <img src="/introFriends.png" alt="" class="intro-image">
             <p class="intro-explnation">パースについてもっと知ることが出来ます。投稿の周辺おすすめ情報をチェックして留学の計画を立てよう。</p>
@@ -44,35 +50,63 @@
     </div>
   </section>
   <section>
-  
+
     <div class="middle">
-       <img src="/SP_1708_G80.jpg" alt="" class="back-image">
-       <img src="/perth.jpg" alt="" class="back-image">
-        <div class="kinds-name">
-          <h2>何に興味がありますか？</h2>
-        </div>
-         <ul class="images">
-            <li><img src="/sss.jpg" alt="" class="type-image"><p>スポーツ</p></li>
-            <li><img src="/sss.jpg" alt="" class="type-image"><p>教育</p></li>
-            <li><img src="/sss.jpg" alt="" class="type-image"><p>観光</p></li>
-            <li><img src="/sss.jpg" alt="" class="type-image"><p>ビジネス</p></li>
-          </ul>
-       </div>
+      <img src="/SP_1708_G80.jpg" alt="" class="back-image">
+      <img src="/perth.jpg" alt="" class="back-image">
+      <div class="kinds-name">
+        <h2>何に興味がありますか？</h2>
+      </div>
+      <ul class="images">
+        <li><img src="/sss.jpg" alt="" class="type-image">
+          <p>スポーツ</p>
+        </li>
+        <li><img src="/sss.jpg" alt="" class="type-image">
+          <p>教育</p>
+        </li>
+        <li><img src="/sss.jpg" alt="" class="type-image">
+          <p>観光</p>
+        </li>
+        <li><img src="/sss.jpg" alt="" class="type-image">
+          <p>ビジネス</p>
+        </li>
+      </ul>
+    </div>
   </section>
   <section>
     <div class="bottom">
       <div id="latest-article">
-       <%=render partial: "posts/latest_posts_row", locals:{post:@post}%>
-     </div>
-     <div id="liked-article">
-     <%=render partial: "posts/likes_posts_row", locals:{post:@post2}%>
-       </div>
-         <div id="night-article">
-     <%=render partial: "posts/night_posts_row", locals:{post:@post3}%>
-       </div>
-   
-   
-       </div>
-    </section>
- </div>
+        <%=render partial: "posts/latest_posts_row", locals:{post:@post}%>
+      </div>
+      <div id="liked-article">
+        <%=render partial: "posts/likes_posts_row", locals:{post:@post2}%>
+      </div>
+      <div class="update-new">
+        <div class="new-head">
+          <%= form_with url: search_path  do |form| %>
+          <%= form.label :post_type, "ジャンル" %>
+          <%= form.select :post_type, options_for_select({食べ物: 1, ショッピング: 2, スポーツ: 3, 自然: 4, ナイトライフ: 5, 旅行: 6,音楽: 7, 学生生活: 8, お仕事: 9, その他:10}), { include_blank: "選択して下さい"} %>
+          <%=form.submit "検索"%>
+          <%end%>
+          <div class="silide-buttons">
+            <button type="button" class="btn btn-secondary btn-sm" id="slide-previous-button3">＜
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" id="slide-next-button3">＞
+            </button>
+          </div>
+        </div>
+        <div id="night-article">
+          <div class="balloon4">
+            <p>興味のある記事を調べよう<br>お気に入りの記事が見つかるかも！！</p>
+          </div>
+          <img src="/aussie.png" alt="" class="Aussie-image">
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+</div>
 <%= javascript_include_tag "top" %>

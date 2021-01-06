@@ -9,6 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
    def new
      super
      flash.delete(:notice)
+     
    end
 
   # POST /resource
