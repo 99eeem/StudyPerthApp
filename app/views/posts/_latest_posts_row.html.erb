@@ -7,13 +7,13 @@
             <button type="button" class="btn btn-secondary btn-sm" id="slide-next-button">＞
             </button>
           </div>
-         </div>         
+         </div>
           <div class="new-update">
           <% post.each do |post|%>
             <div class="flex first-silde-items">
               <div class="each-item">
               <% if post.images.count > 0%>
-                <%=link_to image_tag(post.images.first, :size =>'330x170'), post_path(post.id)%>
+                <%=link_to image_tag(post.images.first, :size =>'330x170'), post_path(post.id), data: {"turbolinks" => false}%>
                   <div class="new-update-info">
                     <div class="new-update-title"><%=post.title%>
                     </div>

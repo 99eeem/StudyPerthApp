@@ -1,0 +1,30 @@
+<div class="menu-cover">
+     <ul class="menu-info">
+             <%if user_signed_in?%>
+                <li><%=link_to "新規投稿", new_post_path%></li>
+                <li><%=link_to"My ページ", profile_show_path(current_user.id), data: {"turbolinks" => false}%>
+                </li>
+                <li> <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                </li>
+                <%else%>
+                  <li><%= link_to"新規登録/ログイン", new_user_registration_path, data: {"turbolinks" => false}%>
+                  </li>
+             <%end%>
+        </ul>
+</div>
+<div class="smart-heading">
+  <div class="left-heading">
+      <img src="/logo.png" alt="">
+    </div>
+
+  <div class="right-heading">
+    <div class="menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+</div>
+<%= javascript_include_tag "top" %>

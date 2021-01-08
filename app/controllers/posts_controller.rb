@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only:[:show]
+  before_action :authenticate_user!, except:[:search]
   layout 'posts'
 
 
   def index
-    @post=Post.all.order(id: "DESC") 
+    @post=Post.all.order(id: "DESC")
       @post2 = Post.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
 
 
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    
+
   end
   def create
     @post = Post.create params.require(:post).permit(:text, :title, :post_type, :user_id, :address, :latitude, :longitude, images: []).merge(user_id: current_user.id)#POINT
@@ -25,9 +25,9 @@ class PostsController < ApplicationController
       render(new_post_path)
     end
   end
-  
+
   def edit
-    @post = Post.find(params[:id]) 
+    @post = Post.find(params[:id])
   end
 
   def update
@@ -48,9 +48,9 @@ class PostsController < ApplicationController
       @question= @post.questions.build
       @question_reply = @post.questions.build
       @questions=@post.questions.order(created_at: :ASC)
-    
+
   end
-  
+
   def destroy
 
     @post=Post.find_by(id: params[:id])
@@ -63,9 +63,8 @@ class PostsController < ApplicationController
     @posts=Post.where(post_type: params[:post_type]).order(id: "DESC")
     render "posts/post_type"
 
-    
+
 
   end
 
 end
-

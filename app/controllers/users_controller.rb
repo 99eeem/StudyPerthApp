@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   layout 'users'
-    def show 
+    def show
       @user = User.find_by(id: params[:id])
       @post = Post.find_by(user_id: params[:id])
       @questions=Question.where(user_id: @user.id)
       @replies=Question.where(user_id: @user.id).count(:parent_id)
-    
-  
+
+
     end
     def edit
       @user = User.find(params[:id])

@@ -7,18 +7,14 @@
                 </li>
                 <li> <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                 </li>
-                <li class="contact-button"><%=link_to "お問い合わせ", root_path %>
-                </li>
-                <li><img src="/logo.png" alt="" class="header-logo">  
+                <li><img src="/logo.png" alt="" class="header-logo">
                 </li>
                 <%else%>
                   <li><%= link_to"新規登録/ログイン", new_user_registration_path, data: {"turbolinks" => false}%>
                   </li>
-                 <li class="contact-button"><%=link_to "お問い合わせ", root_path %>
-                 </li>
                  <li>
                     <div class="logo-area">
-                         <img src="/logo.png" alt="" class="header-logo">  
+                         <img src="/logo.png" alt="" class="header-logo">
                     </div>
                 </li>
              <%end%>

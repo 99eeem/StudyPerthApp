@@ -1,11 +1,14 @@
 <div class="signup-section">
-  <div id="sign-up" class="show-up">
-    <%=render "users/registrations/sign_up"%>
+    <%=link_to(root_path, data: {"turbolinks" => false}) do%>
+        <i class="fas fa-long-arrow-alt-right back-page fas-2x"></i>
+    <%end%>
+    <div id="sign-up" class="show-up">
+        <%=render "users/registrations/sign_up"%>
     <div id="log-in">
       <%=render "users/sessions/log_in"%>
     </div>
-  </div>
-  <% content_for(:body_attributes) do %>
-  data-turbolinks="false"
-  <% end %>
-  <%= javascript_include_tag "users/registrations/new" %>
+</div>
+<% content_for(:body_attributes) do %>
+data-turbolinks="false"
+<% end %>
+<%= javascript_include_tag "users/registrations/new" %>

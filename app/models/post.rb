@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   validates :text, presence: true
   validates :images, presence: true
   validates :post_type, presence: true
+  validates :address, presence: true
   geocoded_by :address
   after_validation :geocode
   has_many_attached :images

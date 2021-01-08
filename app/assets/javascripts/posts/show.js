@@ -332,7 +332,21 @@ document.addEventListener("turbolinks:load", function () {
 
 
     }
-    console.log(more);
+    const bar=document.querySelectorAll(".menu div");
+    const menu = document.querySelector(".menu");
+    var menu_cover = document.querySelector(".menu-cover");
+    var menu_info = document.querySelector(".menu-info");
+
+          menu.addEventListener("click", function(){
+            menu.classList.toggle("active")
+            menu_cover.classList.toggle("active")
+            menu_info.classList.toggle("active")
+            document.getElementById("body").classList.toggle("active");
+
+
+
+
+          })
 
 
   }

@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :twitter]
-  
+
 has_many :posts, dependent: :destroy
 has_many :likes, dependent: :destroy
 has_many :comments, dependent: :destroy
@@ -16,15 +16,17 @@ def liked_by?(post_id)
 end
 
 # このから下を追加--------------------------------------------------------------
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.name
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0, 20] # ランダムなパスワードを作成
-      user.image = auth.info.image.gsub("_normal","") if user.provider == "twitter"
-      user.image = auth.info.image.gsub("picture","picture?type=large") if user.provider == "google_oauth2"
-    end
+
+
+def self.from_omniauth(auth)
+  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    user.provider = auth.provider
+    user.uid = auth.uid
+    user.name = auth.name
+    user.email = auth.info.email
+    user.password = Devise.friendly_token[0, 20] # ランダムなパスワードを作成
+    user.user_image = auth.info.image.gsub("_normal","") if user.provider == "twitter"
+    user.user_image = auth.info.image if user.provider == "google_oauth2"
   end
+end
 end

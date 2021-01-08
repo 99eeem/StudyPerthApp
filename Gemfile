@@ -57,11 +57,13 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'config'
 gem 'dotenv-rails'
 gem "gmaps4rails"
 gem "geocoder"
-gem "gon"
+
 

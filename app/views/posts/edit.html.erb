@@ -1,3 +1,4 @@
+<div class="post-action">
 <div class="container">
 <%= render'errors_format', locals:{post:@post}%>
     <%= form_with model: @post, local: true  do |form| %>
@@ -11,7 +12,7 @@
       <div>
     <div　class="form-group">
     <%= form.label :text, "コメント"%>
-      <%= form.text_area :text, class: "form-control", :size=>"60x10", value: @post.text%> 
+      <%= form.text_area :text, class: "form-control", :size=>"60x10", value: @post.text%>
    <br>
     <div class="form-group">
     <%= form.label :images, "写真"%>
@@ -26,18 +27,19 @@
           <div class="post-image">
             <%= image_tag(image,class: "preview", id: :img_prev)%>
           </div>
-           <%end%> 
+           <%end%>
          <% else %>
             <div class="preview not-preview" id="img_prev"><p>Preview</p></div>
-          <% end %>  
+          <% end %>
      </div>
 </div>
 
-  
-   
+
+
     </div>
     <% end %>
-    
+
+</div>
 </div>
 
 <%= javascript_include_tag "edit" %>

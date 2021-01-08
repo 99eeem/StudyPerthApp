@@ -29,13 +29,11 @@
 var disable_flash= function(){
   flash.style.height="0px"
   flash_text.style.transform="translateY(-40px)"
-  
+
 
 
 }
-setTimeout(disable_flash, 3000);
+    setTimeout(disable_flash, 3000);
+
 }
   )
-
-
-

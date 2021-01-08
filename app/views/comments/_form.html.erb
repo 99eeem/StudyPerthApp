@@ -1,9 +1,9 @@
 <%= form_with model:[post, comment] do |form|%>
-            <div class="comment-area">
-              <%= form.label :content, "コメント"%>
-                <%= form.text_area :content, class: "comment-form", :size=>"10x10",placeholder: "内容を記入してください"%><br>
-            <div class="commnet-submit">
-              <%=form.submit("Lets's submit", class: "btn btn-outline-secondary")%>
-            </div>
-          </div>
-  <%end%>
+    <div class="comment-area">
+      <%= form.label :content, "コメント"%>
+  <%= form.text_area :content, class: "comment-form", :size=>"10x10",placeholder: "内容を記入してください"%><br>
+  <div class="commnet-submit">
+    <%=form.submit("Lets's submit", class: "btn btn-outline-secondary")%>
+     </div>
+    </div>
+<%end%>

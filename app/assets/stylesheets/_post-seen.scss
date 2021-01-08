@@ -1,0 +1,123 @@
+.update-new {
+  width: 90%;
+  background-color: white;
+  margin: 60px auto;
+  padding: 20px;
+
+  .new-head {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    margin-bottom: 10px;
+    padding: 0 30px;
+
+    h2 {
+      font-size: 40px;
+      line-height: 40px;
+      color: #754F44;
+
+    }
+
+  }
+
+  .new-update {
+    display: grid;
+    grid-template-rows: 200px 200px;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 15px;
+
+
+    .flex {
+      display: none;
+      width: 100%;
+      height: 100%;
+
+      &.biggest-area {
+        grid-row: 1 / 3;
+        grid-column: 1/2;
+        padding: 14px 20px;
+
+        .each-item {
+          a {
+            height: 73%;
+          }
+
+          .new-update-info {
+            height: 22%;
+
+            .new-update-title {
+              font-size: 22px;
+            }
+
+            div {
+              height: 20%;
+              font-size: 17px;
+            }
+          }
+        }
+
+      }
+
+      .each-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+
+        a {
+          width: 100%;
+          height: 66%;
+
+          img {
+            width: 100%;
+            height: 100%;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+
+          }
+
+        }
+
+        .new-update-info {
+          width: 100%;
+          height: 28%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .new-update-title {
+            color: #EC7357;
+            font-weight: bold;
+            font-size: 15px;
+            height: 30%;
+
+
+          }
+
+          div {
+            height: 20%;
+            font-size: 10px;
+
+            .new-update-time {
+              float: right;
+            }
+
+            .like {
+              a {
+                .fa-thumbs-up {
+                  color: #FDD692;
+
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

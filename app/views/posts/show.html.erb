@@ -1,5 +1,6 @@
 <section>
-  <div class=container>
+
+  <div class=photo-container>
     <div class="post-and-post">
       <div class="post-box">
           <div class="place-info">
@@ -17,7 +18,7 @@
           <div class="post-image">
             <%= image_tag(image,class: "preview-image")%>
           </div>
-           <%end%> 
+           <%end%>
           </div>
           </div>
         <%end%>
@@ -39,10 +40,12 @@
               <div class="post-time">
                 <span>投稿日:<%=@post.created_at.to_s(:datetime)%></span>
               </div>
+              <%if user_signed_in? && @post.user_id==current_user.id%>
                <div class="modify-post">
                   <%=link_to("編集", edit_post_path)%>
                   <%= link_to '削除', post_path, method: :delete %>
               </div>
+              <%end%>
             </div>
             <div class="right-detail">
                   <div class="post_<%=@post.id%>">
@@ -51,6 +54,7 @@
               </div>
           </div>
       </div>
+      <div class="interactive">
       <ul class="inquire-box">
         <li class="color">投稿にコメントする</li>
         <li>
@@ -66,22 +70,22 @@
             <div class="comment-box">
             <% if user_signed_in?%>
               <div class="comment-form" id="comment_form">
-              <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %> 
+              <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
                 </div>
               <%end%>
-              </div>   
+              </div>
               <div id="comments_area">
                 <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
-            </div> 
+            </div>
           </li>
           <li class="question-filed">
           <div class="question-box">
             <% if user_signed_in?%>
               <div class="question-form" id="question_form">
-              <%= render partial: 'questions/form', locals: { question: @question, post: @post } %> 
+              <%= render partial: 'questions/form', locals: { question: @question, post: @post } %>
                 </div>
               <%end%>
-              </div>   
+              </div>
               <div id="question_area">
               <%=render partial: "questions/answer_index", locals:{questions:@questions, post: @post}%>
               </div>
@@ -101,20 +105,15 @@
             <h3>近くのおすすめ<br>スポット</h3>
             <ul id="recommended-list"></ul>
           </div>
-  
-  
+
+
 
 
     </div>
+      </div>
   </div>
 <% content_for(:body_attributes) do %>
     data-turbolinks="false"
 <% end %>
 </section>
 <%= javascript_include_tag "posts/show" %>
-
-
-
-
-
-

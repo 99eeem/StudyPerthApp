@@ -14,11 +14,52 @@
  *= require_tree .
  *= require_self
  */
+ $pc: 1024px; // PC
+$tab: 787px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
  @import "bootstrap";
  .show{
   display: block !important;
 }
  body{
+   &.active{
+
+  position: fixed;
+   }
+   .heading{
+     @include sp{
+       display: none;
+     }
+   }
+   .headingCommon{
+     @include sp{
+       display: none;
+     }
+   }
+   .smart-heading{
+     display: none;
+     @include sp{
+       display: flex;
+     }
+   }
+
    margin: 0;
    .flash {
      text-align: center;
@@ -28,7 +69,7 @@
      height: 40px;
      border: 0;
      line-height: 40px;
-    
+
     .flash-text{
       transition: all 1s ease;
     }
