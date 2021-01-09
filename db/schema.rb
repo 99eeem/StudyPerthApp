@@ -71,14 +71,6 @@ ActiveRecord::Schema.define(version: 2021_01_08_233656) do
     t.index ["parent_id"], name: "index_questions_on_parent_id"
   end
 
-  create_table "spots", force: :cascade do |t|
-    t.string "address", null: false
-    t.float "latitude", null: false
-    t.float "longitude", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
