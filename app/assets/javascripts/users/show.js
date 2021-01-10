@@ -16,5 +16,23 @@ document.addEventListener("turbolinks:load", function () {
     document.getElementById("mask").style.height = "0";
     document.getElementById("mask").style.visibility = "hidden";
   })
-  
+     //The manu tab function when a screen is adjusting for a smar phone
+    //フレキシブルデザインのためのタブ機能
+    const bar = document.querySelectorAll(".menu div");
+    const menu = document.querySelector(".menu");
+    var menu_cover = document.querySelector(".menu-cover");
+    var menu_info = document.querySelector(".menu-info");
+
+    menu.addEventListener("click", function () {
+      menu.classList.toggle("active")
+      menu_cover.classList.toggle("active")
+      menu_info.classList.toggle("active")
+      document.getElementById("body").classList.toggle("active");
+
+
+
+
+    })
+
+
 });

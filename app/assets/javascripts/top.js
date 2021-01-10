@@ -194,6 +194,8 @@ document.addEventListener("turbolinks:load", function () {
         third_each_three[slide_index3][k].style.display = "block"
       }
     })
+
+
     //The manu tab function when a screen is adjusting for a smar phone
     //フレキシブルデザインのためのタブ機能
     const bar = document.querySelectorAll(".menu div");
@@ -207,41 +209,39 @@ document.addEventListener("turbolinks:load", function () {
       menu_info.classList.toggle("active")
       document.getElementById("body").classList.toggle("active");
 
-
-
-
     })
 
-  }
-
-  var MovingItems = document.querySelectorAll(".update-new");
-  console.log(MovingItems);
-
-  var moving_images=new Array();
-moving_images[0]=document.querySelector(".first-slide-items");
-moving_images[1]=document.querySelectorAll(".second-slide-items");
 
 
 
+    var MovingItems = document.querySelectorAll(".update-new");
+    console.log(MovingItems);
+
+    var moving_images = new Array();
+    moving_images[0] = document.querySelector(".first-slide-items");
+    moving_images[1] = document.querySelectorAll(".second-slide-items");
 
 
 
 
-  for (let i = 0; i < MovingItems.length; i++) {
-    document.addEventListener("scroll", function () {
-
-      var GetDistance = MovingItems[i].getBoundingClientRect().top + (MovingItems[i].clientHeight * 0.5);
-
-      if (window.innerHeight > GetDistance) {
-        MovingItems[i].classList.add("move");
 
 
+
+    for (let i = 0; i < MovingItems.length; i++) {
+      document.addEventListener("scroll", function () {
+
+        var GetDistance = MovingItems[i].getBoundingClientRect().top + (MovingItems[i].clientHeight * 0.5);
+
+        if (window.innerHeight > GetDistance) {
+          MovingItems[i].classList.add("move");
+
+
+        }
       }
+
+      )
+
     }
-
-    )
-
   }
-
 
 });

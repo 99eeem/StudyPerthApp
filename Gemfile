@@ -66,4 +66,5 @@ gem 'dotenv-rails'
 gem "gmaps4rails"
 gem "geocoder"
 gem 'pg', group: :production
-
+gem 'mini_magick'
+gem 'aws-sdk-s3', require: false

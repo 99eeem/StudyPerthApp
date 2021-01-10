@@ -5,15 +5,22 @@
   height: 80px;
   width: 100%;
   max-width: 1140px;
-  background-color: #f0efeb;
-  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
+  margin: 0x auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 
-  border-bottom: 2px solid #754F44;
+
+
   .logo-space {
     width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 20px;
+ 
     .header-logo {
       display: flex;
       justify-content: center;

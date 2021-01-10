@@ -34,6 +34,9 @@ var disable_flash= function(){
 
 }
     setTimeout(disable_flash, 3000);
+  
+
+
 
 }
   )
