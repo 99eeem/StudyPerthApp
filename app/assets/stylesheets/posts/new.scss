@@ -1,3 +1,24 @@
+
+$pc: 1024px; // PC
+$tab: 787px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
 .post-action{
   max-width: 1140px;
   margin: 0 auto;
@@ -10,7 +31,10 @@
 
   }
   .container {
-    padding: 75px 15px 33px;
+    padding:95px 15px 33px;
+    @include sp{
+      padding: 75px 15px 33px;
+    }
     .eroor-message-place{
       width: 100%;
       border: 2px solid red;

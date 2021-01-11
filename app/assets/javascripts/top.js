@@ -14,20 +14,48 @@ document.addEventListener("turbolinks:load", function () {
     let what_you_like = document.querySelector(".kinds-name h2");
 
 
+    var MovingItems = document.querySelectorAll(".update-new");
+    console.log(MovingItems);
+    var moving_images = new Array();
+moving_images[0] =first_items
+    moving_images[1] = second_items
+    let images_array = []
+    for (let i = 0; i < moving_images.length; i++) {
+      for (let k = 0; k < moving_images[i][k].length; k++) {
+        images_array.push('<span style="animation-delay:'+((i*0.05)+0.8)+'s;">'+moving_images[i][k]+'</span>')
 
-    /* for (let i = 0; i < kindimages.length; i++) {
-       kindimages[i].addEventListener("mouseover" ,function(){
-         backimages[i].classList.add("show");
-         what_you_like.style.display="none";
 
-        })
-        kindimages[i].addEventListener("mouseleave" ,function(){
-          backimages[i].classList.remove("show");
-          what_you_like.style.display="block";
 
-        })
+      }
 
-      }*/
+    }
+    for (let h = 0; h < images_array.length; h++) {
+      document.querySelector(".top").innerHTML=images_array[h];
+    }
+
+    for (let i = 0; i < MovingItems.length; i++) {
+      document.addEventListener("scroll", function () {
+
+        var GetDistance = MovingItems[i].getBoundingClientRect().top + (MovingItems[i].clientHeight * 0.5);
+
+        if (window.innerHeight > GetDistance) {
+          for (let k = 0; k < 5; k++) {
+            moving_images[i][k].classList.add("move");
+
+            }
+
+
+
+        }
+      }
+
+      )
+
+    }
+
+
+
+
 
     next_btn = document.getElementById("slide-next-button")
     previous_btn = document.getElementById("slide-previous-button")
@@ -50,11 +78,16 @@ document.addEventListener("turbolinks:load", function () {
 
     for (let i = 0; i < second_each_three[slide_index2].length; i++) {
       second_each_three[slide_index2][i].style.display = "block"
+      second_each_three[slide_index2][i].style.animationDelay = "0.6s"
+      second_each_three[slide_index2][i].style.animationDuration = "0.5s"
 
     }
 
     for (let i = 0; i < first_each_three[slide_index1].length; i++) {
       first_each_three[slide_index1][i].style.display = "block"
+      first_each_three[slide_index1][i].style.animationDelay = "0.6s"
+      first_each_three[slide_index1][i].style.animationDuration = "0.5s"
+
 
     }
 
@@ -214,34 +247,7 @@ document.addEventListener("turbolinks:load", function () {
 
 
 
-    var MovingItems = document.querySelectorAll(".update-new");
-    console.log(MovingItems);
 
-    var moving_images = new Array();
-    moving_images[0] = document.querySelector(".first-slide-items");
-    moving_images[1] = document.querySelectorAll(".second-slide-items");
-
-
-
-
-
-
-
-    for (let i = 0; i < MovingItems.length; i++) {
-      document.addEventListener("scroll", function () {
-
-        var GetDistance = MovingItems[i].getBoundingClientRect().top + (MovingItems[i].clientHeight * 0.5);
-
-        if (window.innerHeight > GetDistance) {
-          MovingItems[i].classList.add("move");
-
-
-        }
-      }
-
-      )
-
-    }
   }
 
 });

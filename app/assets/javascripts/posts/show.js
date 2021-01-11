@@ -63,7 +63,7 @@ document.addEventListener("turbolinks:load", function () {
         service.nearbySearch({
             location: latLng,
             radius: 2000,
-            type: ["restaurant", "tourist_attraction"],
+            type: ["restaurant","tourist_attraction"],
             key: ["japanese", "food"],
             language: 'ja'
           },
@@ -109,7 +109,8 @@ document.addEventListener("turbolinks:load", function () {
               //Resulets should have website url and photos, otherwise the result is excluded
               //ウェブサイトと写真を持っていないものは結果から除外
               if (place_details.website == null) return;
-              if (place_details.photos == null) return;
+                if (place_details.photos == null) return;
+                if (place_details.rating == undefined) return;
               var li_div = document.createElement("li");
               marker = new google.maps.Marker({
                 position: placesList[i].geometry.location,
@@ -249,7 +250,7 @@ document.addEventListener("turbolinks:load", function () {
                 }
               }
 
-              function third_back_slide() {
+              function second_back_slide() {
                 document.querySelector(".img2").src = googleArray_2[index];
                 if (index >= 0) {
                   index = index - 1;
@@ -271,7 +272,7 @@ document.addEventListener("turbolinks:load", function () {
               } else if (i === 1) {
                 document.querySelector(".back1").addEventListener("click", first_back_slide);
               } else if (i === 2) {
-                document.querySelector(".back2").addEventListener("click", third_back_slide);
+                document.querySelector(".back2").addEventListener("click", second_back_slide);
               } else {
                 document.querySelector(".back3").addEventListener("click", third_back_slide);
               }
