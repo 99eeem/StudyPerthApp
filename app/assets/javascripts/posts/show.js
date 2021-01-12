@@ -63,7 +63,7 @@ document.addEventListener("turbolinks:load", function () {
         service.nearbySearch({
             location: latLng,
             radius: 2000,
-            type: ["restaurant","tourist_attraction"],
+            type: ["restaurant"],
             key: ["japanese", "food"],
             language: 'ja'
           },
