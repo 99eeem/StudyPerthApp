@@ -24,7 +24,7 @@ $sp: 480px;  // スマホ
 .signup-section{
   width: 100%;
   max-width: 1140px;
-  height: 100vh;
+  height: 720px;
   margin: 0 auto;
   position: relative;
   .back-page{
@@ -129,6 +129,9 @@ $sp: 480px;  // スマホ
       .main-form {
         width: 90%;
         margin: 0 auto;
+        #error_explanation{
+          display: none;
+        }
         .login-form {
           .login-set{
             border-bottom: 2px solid rgb(198, 198, 198);

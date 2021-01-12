@@ -23,3 +23,20 @@ ja:
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %Z"
     am: "午前"
     pm: "午後"
+    ja:
+
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: "が空になっています。入力してください。"
+            post_type:
+              blank: "が空になっています。入力してください。"
+            images:
+              blank: "が空になっています。入力してください。"
+            text:
+              blank: "が空になっています。入力してください。"
+            address:
+              blank: "が空になっています。入力してください。"
