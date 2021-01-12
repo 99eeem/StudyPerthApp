@@ -1,4 +1,4 @@
-<img　src="https://user-images.githubusercontent.com/75351671/104306468-50014e80-5511-11eb-900a-8ff023fdcd95.png">
+<img src="https://user-images.githubusercontent.com/75351671/104306468-50014e80-5511-11eb-900a-8ff023fdcd95.png">
 # リンクWA
 リンクWAはオーストラリアのパースへ留学に興味がある方達に、現地留学生の生活を見て留学への一歩を後押しするサービスです。
 TwitterやInstagram等の大きなSNSとは違い投稿者の自身の生活や活動をより身近に感じてもらう事をコンセプトにしました。
@@ -45,7 +45,7 @@ WA（西オーストラリア）の首都であるパースは5年連続世界�
 留学エージェントのオーナーのビジネスに対する考えが「私たちは留学を売るのではなく、WAを売っている」という事で、WAの魅力を十分に見せれるデザイン性にしました。又、。
 
 
-<img width="50%"　src="https://user-images.githubusercontent.com/75351671/104306563-69a29600-5511-11eb-9cbe-648d26ae3f76.png"><img width="50%" src="https://user-images.githubusercontent.com/75351671/104306576-6d361d00-5511-11eb-8fcc-52475f4892f3.png">
+<img width="50%" src="https://user-images.githubusercontent.com/75351671/104306563-69a29600-5511-11eb-9cbe-648d26ae3f76.png"><img width="50%" src="https://user-images.githubusercontent.com/75351671/104306576-6d361d00-5511-11eb-8fcc-52475f4892f3.png">
 <img width="50%" src="https://user-images.githubusercontent.com/75351671/104306591-72936780-5511-11eb-9ebb-9c46a576512f.png"><img width="50%" src="https://user-images.githubusercontent.com/75351671/104306618-7c1ccf80-5511-11eb-9bbb-3325021c8305.png">
 
 # 機能一覧
