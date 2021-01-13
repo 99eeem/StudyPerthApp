@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     margin-left: 20px;
- 
+
     .header-logo {
       display: flex;
       justify-content: center;
@@ -53,6 +53,11 @@
         list-style-type: none;
         margin: 0 7px;
         position: relative;
+        &.here{
+          a{
+            color: #333333;
+          }
+        }
 
       &:hover {
         text-decoration: underline;

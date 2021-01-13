@@ -33,6 +33,13 @@ document.addEventListener("turbolinks:load", function () {
 
 
     })
+    var mypage_nav = document.querySelectorAll(".mypage-nav");
+    for (let i = 0; i < mypage_nav.length; i++) {
+
+      mypage_nav[i].classList.add("here");
+
+    }
+
 
 
 });

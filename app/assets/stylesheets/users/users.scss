@@ -37,6 +37,7 @@ transition: all 1s ease;
   color: rgb(137, 146, 154);
   padding: 40px 0;
   max-width: 1140px;
+
   #edit-form{
     height: 100%;
     width: 60%;
@@ -51,6 +52,11 @@ transition: all 1s ease;
     }
     .edit-container{
       color: white;
+      .btn-info{
+        background-color: #EC7357;
+        color: white;
+        border: none;
+      }
     }
   }
   .profile-container{
@@ -95,6 +101,7 @@ transition: all 1s ease;
           }
         }
         .personal-info{
+
           h2{
             color: #754F44;
             font-size: 35px;
@@ -105,9 +112,15 @@ transition: all 1s ease;
           }
           .userId{
             margin: 0;
+            @include sp{
+              font-size: 13px;
+            }
           }
           .start-date{
             margin: 0;
+            @include sp{
+              font-size: 13px;
+            }
           }
         }
       }
@@ -115,15 +128,16 @@ transition: all 1s ease;
         width: 70px;
         height: 35px;
         border-radius: 7px;
-        border: 2px solid greenyellow;
+        border: 2px solid #EC7357;
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         &:hover{
           opacity: 0.7;
         }
         .edit-button{
-          color: greenyellow;
+          color: #EC7357;
         }
       }
     }
@@ -239,6 +253,7 @@ transition: all 1s ease;
             height: 100%;
             width: 15%;
             margin-right: 70px;
+            object-fit: cover;
             @include sp{
               margin-right: 20px;
               width: 30%;

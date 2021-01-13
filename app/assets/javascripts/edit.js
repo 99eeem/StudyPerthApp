@@ -30,7 +30,11 @@
 
 
         })
+    var newpage_nav = document.querySelectorAll(".newpage-nav");
+    for (let i = 0; i < newpage_nav.length; i++) {
+
+      newpage_nav[i].classList.add("here");
+
+    }
 }
   )
-
-  

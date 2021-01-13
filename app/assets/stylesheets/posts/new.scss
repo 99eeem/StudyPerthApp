@@ -65,6 +65,11 @@ $sp: 480px;  // スマホ
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
+        .btn{
+          background-color: #EC7357;
+          border: none;
+
+        }
         .koko {
           margin:0!important;
         }
