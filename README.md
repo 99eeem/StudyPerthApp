@@ -93,6 +93,9 @@ WA（西オーストラリア）の首都であるパースは5年連続世界�
 * S3
 * Postgres
 
+# ER図
+![images](https://user-images.githubusercontent.com/75351671/104400184-7c5eae80-5595-11eb-9918-3c5fc91a8bf6.png)
+
 # 最後に
 大変お忙しい中、最後までご覧いただき誠にありがとうございました。
 
