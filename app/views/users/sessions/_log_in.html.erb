@@ -44,14 +44,21 @@
        <li>
          <%= link_to user_twitter_omniauth_authorize_path do %>
          <div class="sns-path">
-            <button class="btn btn-primary btn-sm twitter"><i class="fab fa-twitter-square fa-2x"></i><span>Twitter</span></button>
+            <button class="btn btn-primary btn-sm twitter"><i class="fab fa-twitter-square"></i><span>Twitter</span></button>
          </div>
        <% end %>
       </li>
        <li>
           <%= link_to user_google_oauth2_omniauth_authorize_path do %>
           <div class="sns-path">
-            <button class="btn btn-primary btn-sm google"><i class="fab fa-google fa-2x"></i><span>Google</span></button>
+            <button class="btn btn-primary btn-sm google"><i class="fab fa-google"></i><span>Google</span></button>
+          </div>
+         <% end %>
+        </li>
+        <li>
+          <%= link_to users_guest_sign_in_path, method: :post do %>
+          <div class="sns-path">
+            <button class="btn btn-primary btn-sm guest"><i class="fas fa-user-friends  fab"></i><span>Guest</span></button>
           </div>
          <% end %>
         </li>

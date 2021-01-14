@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- 
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
   :registrations=> 'users/registrations',
 }
@@ -9,17 +9,18 @@ Rails.application.routes.draw do
  devise_scope :user do
     get "/users"=>'users/registrations#new'
     get "/users/sign_in"=>'users/registrations#new'
-   
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+
   end
   get"users/:id/show"=>"users#show", as: 'profile_show'
   get"users/:id/edit"=>"users#edit", as: 'profile_edit'
   post"users/:id/update"=>"users#update",as: 'profile_update'
 
-  
+
    post 'like/:id' => 'likes#create', as: 'create_like'
    delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
- 
-   
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts, except:[:index] do
@@ -29,8 +30,8 @@ Rails.application.routes.draw do
     post "questions/:id/reply"=>"questions#reply", as:"reply_create"
   end
   post "post/search"=>"posts#search", as:"search"
-  
- 
+
+
   get "/"=> "home#top"
 
   root to:"home#top"

@@ -18,4 +18,5 @@ class UsersController < ApplicationController
       @user.save
       redirect_to profile_show_path(@user.id)
     end
+
 end

@@ -18,9 +18,17 @@
           <p class="start-date"><%=@user.created_at.to_s(:datetime)%>日から利用しています</p>
         </div>
       </div>
+      <div class="data-management">
+       <%if user_signed_in? && @user.id==current_user.id%>
       <div class="profile-edit">
         <div class="edit-button">編集</div>
       </div>
+      <div class="profile-delete">
+        <%= link_to '削除', user_registration_path, method: :delete, class: "delete-button"%>
+      </div>
+      <%end%>
+      </div>
+
     </div>
     <div class="activity-row">
       <ul>

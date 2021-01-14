@@ -6,14 +6,17 @@
     <%= form.label :post_type, "ジャンル" %>
     <%= form.select :post_type, options_for_select({食生活: 1, ナイトライフ: 2, スポーツ: 3}), {selected:@post.post_type}, {class: "form-control"} %>
     </div>
-        <div　class="form-group">
+        <div class="form-group">
     <%= form.label :title, "タイトル"%>
-      <%= form.text_field :title, class: "form-control" %><br>
+      <%= form.text_field :title, class: "form-control" %>
       <div>
-    <div　class="form-group">
+      <div class="form-group">
+    <%= form.label :address, "住所"%>
+      <%= form.text_field :text, class: "form-control", :size=>"60x10", value: @post.address%>
+      </div>
+    <div class="form-group">
     <%= form.label :text, "コメント"%>
       <%= form.text_area :text, class: "form-control", :size=>"60x10", value: @post.text%>
-   <br>
     <div class="form-group">
     <%= form.label :images, "写真"%>
     <div class="preview-line">

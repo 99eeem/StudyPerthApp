@@ -40,6 +40,7 @@ transition: all 1s ease;
 
   #edit-form{
     height: 100%;
+    max-width: 1140px;
     width: 60%;
     visibility: hidden;
     transition: all 1s ease;
@@ -140,6 +141,24 @@ transition: all 1s ease;
           color: #EC7357;
         }
       }
+      .profile-delete{
+        margin-top: 10px;
+        width: 70px;
+        height: 35px;
+        border-radius: 7px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &:hover{
+          opacity: 0.7;
+        }
+        .delete-button{
+          color: black;
+        }
+      }
+
     }
     .activity-row{
       width: 100%;

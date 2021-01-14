@@ -14,8 +14,13 @@ has_many :liked_posts, through: :likes, source: :post
 def liked_by?(post_id)
   likes.where(post_id: post_id).exists?
 end
+def self.guest
+  find_or_create_by!(email: 'guest@example.com') do |user|
+    user.password = SecureRandom.urlsafe_base64
 
-# このから下を追加--------------------------------------------------------------
+
+  end
+end
 
 
 def self.from_omniauth(auth)

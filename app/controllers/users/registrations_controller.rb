@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :check_guest, only: :destroy
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   layout 'registrations'
@@ -9,7 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
    def new
      super
      flash.delete(:notice)
-     
+
    end
 
   # POST /resource
@@ -35,6 +36,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
      super
      flash.delete(:notice)
    end
+   def check_guest
+    if resource.email == 'guest@example.com'
+      redirect_to root_path
+    end
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -66,6 +72,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
- 
+
 
 end
