@@ -336,7 +336,6 @@ DEPENDENCIES
   mini_magick
   omniauth-google-oauth2
   omniauth-twitter
-  pg
   puma (~> 3.11)
   rails (~> 5.2.2)
   sass-rails (~> 5.0)
