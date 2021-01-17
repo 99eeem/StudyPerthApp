@@ -1,4 +1,4 @@
-<img src="http://link-wa.work">
+<img src="https://user-images.githubusercontent.com/75351671/104829331-0a000e00-58b6-11eb-8985-f8f29e47574c.png">
 
 # リンクWA
 
