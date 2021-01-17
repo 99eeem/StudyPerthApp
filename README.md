@@ -6,7 +6,7 @@
 
 TwitterやInstagram等の大きなSNSとは違い投稿者の自身の生活や活動をより身近に感じてもらう事をコンセプトにしました。
 
-[リンクWA URL](https://study-perth-app01.herokuapp.com)
+[リンクWA URL](http://link-wa.work)
 
 # 制作背景
 このアプリは西オーストラリアと日本の留学エージェント会社のさらなる**顧客の獲得を目的**に開発を行いました。
@@ -90,9 +90,9 @@ WA（西オーストラリア）の首都であるパースは5年連続世界�
 * Rails 5.2.4.4
 
 ### 本番環境
-* AWS(EC2,S3)
+* AWS(EC2,S3,VPC,Route53)
 
-* MySQL
+* MySQL Nginx Unicorn
 
 # ER図
 ![images](https://user-images.githubusercontent.com/75351671/104400184-7c5eae80-5595-11eb-9918-3c5fc91a8bf6.png)
