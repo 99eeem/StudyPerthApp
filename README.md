@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/75351671/104306468-50014e80-5511-11eb-900a-8ff023fdcd95.png">
+<img src="http://link-wa.work">
 
 # リンクWA
 
@@ -90,9 +90,9 @@ WA（西オーストラリア）の首都であるパースは5年連続世界�
 * Rails 5.2.4.4
 
 ### 本番環境
-* heroku
-* S3
-* Postgres
+* AWS(EC2,S3)
+
+* MySQL
 
 # ER図
 ![images](https://user-images.githubusercontent.com/75351671/104400184-7c5eae80-5595-11eb-9918-3c5fc91a8bf6.png)
