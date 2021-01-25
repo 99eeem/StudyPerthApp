@@ -44,14 +44,10 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
 end
-<<<<<<< HEAD
 group :production, :staging do
-    gem 'unicorn', '5.4.1'
+    gem 'unicorn'
 end
-=======
 
-
->>>>>>> 4048b4929048bf52db1944227e13b073a2d7eee9
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
