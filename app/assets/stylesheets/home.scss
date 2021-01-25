@@ -4,6 +4,7 @@
 $pc: 1024px; // PC
 $tab: 787px; // タブレット
 $sp: 480px;  // スマホ
+$sps: 376px;
 
 @mixin pc {
   @media (max-width: ($pc)) {
@@ -17,6 +18,11 @@ $sp: 480px;  // スマホ
 }
 @mixin sp {
   @media (max-width: ($sp)) {
+    @content;
+  }
+}
+@mixin sps {
+  @media (max-width: ($sps)) {
     @content;
   }
 }
@@ -397,7 +403,7 @@ section:nth-of-type(3){
                 color: #754F44;
                 @include sp{
                   font-size: 20px;
-                  line-height: 30ox;
+                  line-height: 30px;
 
                 }
 
@@ -446,6 +452,9 @@ section:nth-of-type(3){
                       .new-update-title {
                         font-size: 22px;
                         @include sp {
+                          font-size: 22px;
+                        }
+                        @include sps {
                           font-size: 19px;
                         }
                       }

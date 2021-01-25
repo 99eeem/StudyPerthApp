@@ -296,6 +296,7 @@ margin: 0 auto;
              justify-content: flex-start;
              height: 90%;
              font-size: 13px;
+             word-break: break-all;
              @include sp{
                font-size: 10px;
              }
@@ -395,6 +396,7 @@ margin: 0 auto;
              justify-content: space-between;
              align-items: center;
              .questiont-text{
+               word-break: break-all;
                display: flex;
                justify-content: flex-start;
                align-items: center;
@@ -465,6 +467,7 @@ margin: 0 auto;
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            word-break: break-all;
             height: 90%;
              font-size: 13px;
              @include sp{
